@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { AbsoluteFill, Img, continueRender, delayRender, staticFile } from "remotion";
+import { AbsoluteFill, Img, continueRender, delayRender, staticFile, useVideoConfig } from "remotion";
 import { ACCENT } from "./brand";
 import { useFonts2, SANS, SERIF } from "./useFonts2";
 import { GraphicView, Graphic, PAPER, INK2 } from "./Graphics";
@@ -7,6 +7,7 @@ import { GraphicView, Graphic, PAPER, INK2 } from "./Graphics";
 import anton from "../fonts/Anton-Regular.ttf";
 
 // 1080x1350 (4:5) carousel slides, rendered as stills (frame 60, so springs have settled).
+// Also renders 1080x1080 squares for YouTube posts (props width/height; `sq` below tightens the layouts).
 // Text markup everywhere: *word* = accent colour.
 
 const DISPLAY = "FLDisplay";
@@ -44,10 +45,10 @@ const Mono: React.FC<{ brand: string; style?: React.CSSProperties; color?: strin
 };
 
 // Screenshots/charts: show the whole image on a blurred, darkened copy of itself, above the headline.
-const Contained: React.FC<{ image: string }> = ({ image }) => (
+const Contained: React.FC<{ image: string; sq?: boolean }> = ({ image, sq }) => (
   <>
     <Img src={staticFile(image)} style={{ position: "absolute", inset: -60, width: "calc(100% + 120px)", height: "calc(100% + 120px)", objectFit: "cover", filter: "blur(40px) brightness(.35)" }} />
-    <div style={{ position: "absolute", left: 50, right: 50, top: 110, height: 700, display: "flex", alignItems: "center", justifyContent: "center" }}>
+    <div style={{ position: "absolute", left: 50, right: 50, top: sq ? 80 : 110, height: sq ? 560 : 700, display: "flex", alignItems: "center", justifyContent: "center" }}>
       <Img src={staticFile(image)} style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain", borderRadius: 18, boxShadow: "0 30px 80px rgba(0,0,0,.6)" }} />
     </div>
     <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(0,0,0,0) 62%, rgba(8,8,10,.85) 80%, rgba(8,8,10,.95) 100%)" }} />
@@ -64,10 +65,11 @@ const Photo: React.FC<{ image: string; focus?: [number, number]; shade: number }
 export const Carousel: React.FC<CarouselProps> = ({ slide, index, total, brand, accent = ACCENT }) => {
   useFonts2();
   useDisplayFont();
+  const sq = useVideoConfig().height < 1200; // square (YouTube) format
   const display: React.CSSProperties = { fontFamily: DISPLAY, textTransform: "uppercase", color: "white", lineHeight: 1.06, letterSpacing: 0.5, textAlign: "center" };
 
   if (slide.type === "cover") {
-    const size = fit(slide.headline, 118, 55, 84);
+    const size = sq ? fit(slide.headline, 96, 55, 70) : fit(slide.headline, 118, 55, 84);
     return (
       <AbsoluteFill style={{ background: "black" }}>
         {slide.image ? <Photo image={slide.image} focus={slide.focus} shade={58} /> : (
@@ -76,13 +78,13 @@ export const Carousel: React.FC<CarouselProps> = ({ slide, index, total, brand, 
             <AbsoluteFill style={{ background: `radial-gradient(ellipse at 50% 30%, ${accent}38 0%, #141417 55%, #070708 100%)` }} />
             <AbsoluteFill style={{ backgroundImage: "linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
             {slide.graphic && (
-              <div style={{ position: "absolute", top: 90, left: 0, right: 0, display: "flex", justifyContent: "center", transform: "scale(.82) rotate(-2deg)", transformOrigin: "50% 0", ["--g-ink" as string]: "white" } as React.CSSProperties}>
+              <div style={{ position: "absolute", top: sq ? 50 : 90, left: 0, right: 0, display: "flex", justifyContent: "center", transform: sq ? "scale(.6) rotate(-2deg)" : "scale(.82) rotate(-2deg)", transformOrigin: "50% 0", ["--g-ink" as string]: "white" } as React.CSSProperties}>
                 <GraphicView g={slide.graphic} f={60} />
               </div>
             )}
           </>
         )}
-        <div style={{ position: "absolute", left: 60, right: 60, ...(slide.image || slide.graphic ? { bottom: 120 } : { top: 0, bottom: 0, display: "flex", flexDirection: "column", justifyContent: "center" }) }}>
+        <div style={{ position: "absolute", left: 60, right: 60, ...(slide.image || slide.graphic ? { bottom: sq ? 100 : 120 } : { top: 0, bottom: 0, display: "flex", flexDirection: "column", justifyContent: "center" }) }}>
           <div style={{ display: "flex", alignItems: "center", gap: 22, marginBottom: 26 }}>
             <div style={{ flex: 1, height: 3, background: "rgba(255,255,255,.85)" }} />
             <div style={{ fontFamily: DISPLAY, fontSize: 34, letterSpacing: 4, color: "white", textTransform: "uppercase" }}>{slide.kicker ?? brand}</div>
@@ -96,10 +98,10 @@ export const Carousel: React.FC<CarouselProps> = ({ slide, index, total, brand, 
   }
 
   if (slide.type === "photo") {
-    const size = fit(slide.headline, 92, 90, 64);
+    const size = sq ? fit(slide.headline, 80, 90, 56) : fit(slide.headline, 92, 90, 64);
     return (
       <AbsoluteFill style={{ background: "black" }}>
-        {slide.fit === "contain" ? <Contained image={slide.image} /> : <Photo image={slide.image} focus={slide.focus} shade={52} />}
+        {slide.fit === "contain" ? <Contained image={slide.image} sq={sq} /> : <Photo image={slide.image} focus={slide.focus} shade={52} />}
         <Mono brand={brand} style={{ position: "absolute", top: 40, left: 48 }} />
         <div style={{ position: "absolute", left: 50, right: 50, bottom: slide.credit ? 110 : 80, ...display, fontSize: size }}>
           <Accent text={slide.headline} color={accent} />
@@ -113,11 +115,11 @@ export const Carousel: React.FC<CarouselProps> = ({ slide, index, total, brand, 
   if (slide.type === "text") {
     // text-only slides use larger type than the reference (readability on phones)
     const bodyLen = (slide.body ?? "").length + (slide.subtitle ?? "").length;
-    const k = bodyLen > 260 ? 0.82 : bodyLen > 180 ? 0.9 : 1;
+    const k = (bodyLen > 260 ? 0.82 : bodyLen > 180 ? 0.9 : 1) * (sq ? 0.84 : 1);
     return (
       <AbsoluteFill style={{ background: "radial-gradient(ellipse at 15% 0%, #2A2A2E 0%, #121214 45%, #050506 100%)" }}>
         {slide.number && (
-          <div style={{ position: "absolute", top: 70, left: 84, fontFamily: SERIF, fontStyle: "italic", fontSize: 150, lineHeight: 1, color: accent, opacity: 0.9 }}>{slide.number}</div>
+          <div style={{ position: "absolute", top: 70, left: 84, fontFamily: SERIF, fontStyle: "italic", fontSize: sq ? 110 : 150, lineHeight: 1, color: accent, opacity: 0.9 }}>{slide.number}</div>
         )}
         <div style={{ position: "absolute", left: 84, right: 84, top: 0, bottom: 0, display: "flex", flexDirection: "column", justifyContent: "center" }}>
           <div style={{ fontFamily: SANS, fontWeight: 800, fontSize: 92 * k, lineHeight: 1.05, letterSpacing: -2, color: accent, marginBottom: 44 }}>{slide.title}</div>
@@ -134,15 +136,15 @@ export const Carousel: React.FC<CarouselProps> = ({ slide, index, total, brand, 
     return (
       <AbsoluteFill style={{ background: `radial-gradient(ellipse at 50% 40%, ${PAPER} 0%, #E4DFD6 70%, #D2CCC1 100%)`, alignItems: "center" }}>
         {slide.headline && (
-          <div style={{ position: "absolute", top: 110, left: 80, right: 80, textAlign: "center", fontFamily: SERIF, fontSize: 84, lineHeight: 1.0, color: INK2 }}>
+          <div style={{ position: "absolute", top: sq ? 70 : 110, left: 80, right: 80, textAlign: "center", fontFamily: SERIF, fontSize: sq ? 72 : 84, lineHeight: 1.0, color: INK2, textWrap: "balance" } as React.CSSProperties}>
             {slide.headline.split(/(\*[^*]+\*)/).map((p, i) => p.startsWith("*") ? <i key={i} style={{ color: accent }}>{p.slice(1, -1)}</i> : <span key={i}>{p}</span>)}
           </div>
         )}
-        <div style={{ position: "absolute", top: slide.headline ? 340 : 0, bottom: 120, left: 0, right: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
-          <GraphicView g={slide.graphic} f={60} />
+        <div style={{ position: "absolute", top: slide.headline ? (sq ? 230 : 340) : 0, bottom: sq ? 90 : 120, left: 0, right: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <div style={{ transform: sq ? "scale(.8)" : undefined }}><GraphicView g={slide.graphic} f={60} /></div>
         </div>
         {slide.credit
-          ? <div style={{ position: "absolute", bottom: 52, left: 80, right: 80, textAlign: "center", fontFamily: SANS, fontSize: 24, color: "rgba(22,22,26,.55)" }}>{slide.credit}</div>
+          ? <div style={{ position: "absolute", bottom: sq ? 36 : 52, left: 80, right: 80, textAlign: "center", fontFamily: SANS, fontSize: 24, color: "rgba(22,22,26,.55)" }}>{slide.credit}</div>
           : <Mono brand={brand} color="rgba(22,22,26,.4)" style={{ position: "absolute", bottom: 50, left: 0, right: 0, textAlign: "center" }} />}
       </AbsoluteFill>
     );

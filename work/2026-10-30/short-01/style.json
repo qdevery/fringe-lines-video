@@ -1,0 +1,18 @@
+{
+  "hook": {"text": "How is Anthropic's retention *900%*?", "end": 2.7},
+  "outro": {"text": "Retention *is* the upsell", "hold": 2.0},
+  "emphasis": ["900%", "anthropic", "retention", "fine", "print", "customers", "renew", "increase", "spend", "guilty", "amazing", "more", "upsell", "$100", "$900", "usage"],
+  "scenes": [
+    {"at": 0.0, "mode": "full"},
+    {"at": 3.2, "mode": "graphic", "graphic": {"type": "stat", "kicker": "Anthropic S-1", "value": 900, "suffix": "%", "label": "net revenue *retention*"}},
+    {"at": 6.6, "mode": "card"},
+    {"at": 7.9, "mode": "graphic", "graphic": {"type": "headline", "source": "The fine print", "title": "Customers who renew and increase their spend", "highlight": "increase their spend"}},
+    {"at": 13.6, "mode": "card"},
+    {"at": 15.7, "mode": "graphic", "graphic": {"type": "quote", "text": "You and I are *guilty* of that.", "by": "Doom"}},
+    {"at": 19.3, "mode": "card"},
+    {"at": 22.5, "mode": "full"},
+    {"at": 26.5, "mode": "card"},
+    {"at": 29.2, "mode": "graphic", "graphic": {"type": "stat", "kicker": "Last year", "prefix": "$", "value": 100, "label": "Quinn's example *spend*"}},
+    {"at": 30.8, "mode": "graphic", "graphic": {"type": "stat", "kicker": "This year", "prefix": "$", "value": 900, "label": "same customer, *9x* the spend"}}
+  ]
+}

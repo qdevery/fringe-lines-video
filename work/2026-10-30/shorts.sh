@@ -3,6 +3,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/../.."
 b() { "$HOME/.shorts-skill/bin/python" pipeline/build_short.py --ep 2026-10-30 "$@" 2>&1 | grep -Ev 'objc|^render [0-9]'; }
+b --name short-01 --range 2317.70:2348.50 --range 2354.34:2359.42 --replace "anthropic=>Anthropic"  # v2 re-cut on the Mac mini; WARNING: overwrites the laptop-made out/shorts/...-short-01.mp4. Captions hand-fixed in props.json (900%, $100, $900)
 b --name short-02 --range 782.40:799.10 --range 802.62:833.80 --replace "27=>27%" --replace "60=>60,000" --replace "000=>"
 b --name short-03 --range 1071.15:1108.75 --replace "gtm=>GTM" --replace "50=>50K" --replace ",000=>"
 b --name short-04 --range 1386.15:1394.70 --range 1424.30:1438.40 --range 1465.65:1474.70 --replace "clot,=>Claude," --replace "claude=>Claude" --replace "twenty=>\$20" --replace "hundred=>\$100" --replace "dollar=>"

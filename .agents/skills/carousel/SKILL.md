@@ -93,6 +93,8 @@ Quotes are fine as **text** (`quote` graphic, attributed by name). Just don't pa
 ```
 This takes about 30–60 s for 8–10 slides and writes PNGs plus a PDF to `out/carousels/<slug>/`.
 
+**YouTube posts:** add `--youtube` to render 1080×1080 squares into `out/carousels/<slug>-youtube/`. YouTube shows post images square, so 4:5 slides get cropped. The same `carousel.json` works; the v1 template tightens its layouts for the square. Not yet supported for `"template": "v2"`.
+
 ## 5. QA
 Make a contact sheet and look at it:
 ```

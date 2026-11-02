@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Render an image carousel (1080x1350 PNG slides + a PDF for LinkedIn) from carousels/<slug>/carousel.json.
 
-  ~/.shorts-skill/bin/python pipeline/build_carousel.py carousels/<slug>
+  ~/.shorts-skill/bin/python pipeline/build_carousel.py carousels/<slug> [--youtube]   # --youtube: 1080x1080 square
 
 carousel.json:
   {
@@ -23,7 +23,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 def main():
-    folder = os.path.abspath(sys.argv[1])
+    args = sys.argv[1:]
+    square = "--youtube" in args          # 1080x1080 square slides for YouTube posts -> out/carousels/<slug>-youtube/
+    folder = os.path.abspath([a for a in args if not a.startswith("--")][0])
     slug = os.path.basename(folder.rstrip("/"))
     spec = json.load(open(os.path.join(folder, "carousel.json")))
     slides = spec["slides"]
@@ -31,11 +33,14 @@ def main():
         if "image" in s and not os.path.exists(os.path.join(folder, s["image"])):
             sys.exit(f"missing image: {s['image']}")
     v2 = spec.get("template") == "v2"   # FringeLines design kit v2 (CarouselV2.tsx); see the carousel skill
-    out = os.path.join(ROOT, "out/carousels", slug)
+    if square and v2:
+        sys.exit("--youtube is only supported for the v1 template so far")
+    out = os.path.join(ROOT, "out/carousels", slug + ("-youtube" if square else ""))
     os.makedirs(out, exist_ok=True)
     batch = [{"id": "CarouselV2" if v2 else "Carousel", "still": 0 if v2 else 60, "out": os.path.join(out, f"{i + 1:02d}.png"),
               "props": {"slide": s, "index": i, "total": len(slides), "brand": spec.get("brand", "Fringe Lines"),
-                        **({"accent": spec["accent"]} if "accent" in spec else {}), "durationInFrames": 1 if v2 else 61}}
+                        **({"accent": spec["accent"]} if "accent" in spec else {}), "durationInFrames": 1 if v2 else 61,
+                        **({"width": 1080, "height": 1080} if square else {})}}
              for i, s in enumerate(slides)]
     bj = os.path.join(folder, ".render.json")  # lives here so the folder is Remotion's publicDir (images resolve)
     json.dump({"batch": batch}, open(bj, "w"))
@@ -46,7 +51,7 @@ def main():
     from PIL import Image
     pngs = [b["out"] for b in batch]
     imgs = [Image.open(p).convert("RGB") for p in pngs]
-    pdf = os.path.join(out, f"{slug}.pdf")
+    pdf = os.path.join(out, f"{slug}{'-youtube' if square else ''}.pdf")
     imgs[0].save(pdf, save_all=True, append_images=imgs[1:], resolution=144)
     print(f"wrote {len(pngs)} slides + {pdf}")
 

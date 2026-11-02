@@ -11,7 +11,11 @@ import { CarouselV2 } from "./CarouselV2";
 import { Infographic } from "./Infographic";
 
 type AnyFC = React.FC<Record<string, unknown>>;
-const meta = ({ props }: { props: Record<string, unknown> }) => ({ durationInFrames: props.durationInFrames as number });
+const meta = ({ props }: { props: Record<string, unknown> }) => ({
+  durationInFrames: props.durationInFrames as number,
+  ...(props.width ? { width: props.width as number } : {}),
+  ...(props.height ? { height: props.height as number } : {}),
+});
 
 export const Root: React.FC = () => (
   <>
