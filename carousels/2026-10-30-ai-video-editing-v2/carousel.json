@@ -1,0 +1,73 @@
+{
+  "template": "v2",
+  "brand": "FringeLines",
+  "slides": [
+    {
+      "type": "cover",
+      "eyebrow": "FringeLines · Behind the scenes",
+      "title": "We asked AI to edit our podcast",
+      "sub": "Two attempts that flopped, and the pipeline that worked.",
+      "tone": "green"
+    },
+    {
+      "type": "point",
+      "number": "01",
+      "title": "Attempt 1: let the agent click",
+      "text": "Quinn wrote down his editing process and let Codex drive Descript. Decent job, but sloppy, and it burned far more Descript credits than editing by hand.",
+      "source": "AS SAID ON THE FRINGELINES PODCAST · OCT 30, 2026"
+    },
+    {
+      "type": "stat",
+      "eyebrow": "Attempt 2 · one prompt, one deck",
+      "value": "~1/3",
+      "text": "of Doom's Descript credits, gone on one deck-to-video test. The video missed the mark.",
+      "source": "AS SAID ON THE FRINGELINES PODCAST · OCT 30, 2026"
+    },
+    {
+      "type": "quote",
+      "text": "I could have just done this in Descript.",
+      "by": "Doom · FringeLines co-host",
+      "tone": "blue"
+    },
+    {
+      "type": "point",
+      "number": "02",
+      "title": "Show, don't tell",
+      "text": "Give the agent videos you like, name what makes them work, and save each style as a reusable skill. Then iterate, like you would with a new editor."
+    },
+    {
+      "type": "list",
+      "title": "So we built a pipeline",
+      "items": [
+        {
+          "title": "Transcribe the recording locally"
+        },
+        {
+          "title": "Cut filler, follow whoever's talking"
+        },
+        {
+          "title": "Spin out shorts and carousels"
+        }
+      ]
+    },
+    {
+      "type": "stat",
+      "eyebrow": "Oct 30 episode",
+      "value": "174",
+      "text": "filler words and stutters cut automatically from one episode.",
+      "source": "FRINGELINES EDITING PILOT · OCT 30, 2026 EPISODE"
+    },
+    {
+      "type": "point",
+      "number": "→",
+      "title": "Don't let agents click. Let them build.",
+      "text": "An agent writing a repeatable pipeline, with a human making the calls, turned one recording into an episode, shorts and these slides."
+    },
+    {
+      "type": "closing",
+      "title": "Follow FringeLines",
+      "sub": "Weekly AI takes from builders.",
+      "tone": "green"
+    }
+  ]
+}

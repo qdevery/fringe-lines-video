@@ -1,0 +1,23 @@
+# media and renders (large, private)
+inbox/
+out/
+work/**/*.mp4
+work/**/*.m4a
+work/**/*.wav
+work/**/*.log
+work/**/faces.json
+work/**/props*.json
+work/*/words-*.json
+carousels/*/images/
+
+# third-party reference repos (own licenses)
+reference/
+
+# tooling / caches
+.remotion/
+.playwright-mcp/
+**/node_modules
+__pycache__/
+*.pyc
+.DS_Store
+**/.render.json

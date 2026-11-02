@@ -1,0 +1,143 @@
+{
+  "template": "v2",
+  "brand": "FringeLines",
+  "slides": [
+    {
+      "type": "cover",
+      "eyebrow": "FringeLines · AI budgets",
+      "title": "AI spend per head nearly doubled",
+      "sub": "Who's driving it, and why the bill keeps climbing.",
+      "tone": "green"
+    },
+    {
+      "type": "stat",
+      "eyebrow": "AI spend per employee · 2026",
+      "value": "$1,024",
+      "text": "is the average for firms using AI, up 96% from about $520 in 2025.",
+      "source": "SOURCE: ATLANTA FED BUSINESS UNCERTAINTY SURVEY, OCT 2026, VIA A16Z · MEAN, EMPLOYMENT-WEIGHTED, FIRMS USING AI · N = 880"
+    },
+    {
+      "type": "bars",
+      "title": "Every industry is up 85%+",
+      "sub": "Growth in AI spend per employee, 2025 → 2026",
+      "signed": true,
+      "suffix": "%",
+      "rows": [
+        {
+          "label": "Retail, wholesale & transport",
+          "value": 131,
+          "hi": true
+        },
+        {
+          "label": "Business & professional services",
+          "value": 98
+        },
+        {
+          "label": "Other services",
+          "value": 91
+        },
+        {
+          "label": "Construction & utilities",
+          "value": 89
+        },
+        {
+          "label": "Manufacturing",
+          "value": 87
+        }
+      ],
+      "source": "SOURCE: ATLANTA FED SBU, OCT 2026, VIA A16Z · N = 880"
+    },
+    {
+      "type": "bars",
+      "title": "Mid-size firms are catching up fastest",
+      "sub": "Growth by company size, 2025 → 2026",
+      "signed": true,
+      "suffix": "%",
+      "rows": [
+        {
+          "label": "99–249 employees",
+          "value": 142,
+          "hi": true
+        },
+        {
+          "label": "50–99 employees",
+          "value": 134
+        },
+        {
+          "label": "250+ employees",
+          "value": 88
+        },
+        {
+          "label": "0–50 employees",
+          "value": 78
+        }
+      ],
+      "source": "SOURCE: ATLANTA FED SBU, OCT 2026, VIA A16Z · N = 880"
+    },
+    {
+      "type": "point",
+      "number": "?",
+      "title": "The solopreneur effect",
+      "text": "Firms under 50 people spend nearly as much per head as companies with 250+. Quinn's theory: solo founders and tiny teams are buying serious AI, with few employees to divide it by.",
+      "source": "QUINN'S THEORY · NOT TESTED IN THE SURVEY"
+    },
+    {
+      "type": "stat",
+      "eyebrow": "Anthropic net revenue retention",
+      "value": "900%",
+      "text": "Existing business customers now spend 9× what they did a year earlier.",
+      "source": "SOURCE: ANTHROPIC S-1, AS OF SEP 30, 2026 · EXCLUDES CLAUDE PRO AND MAX SUBSCRIBERS"
+    },
+    {
+      "type": "bars",
+      "title": "Tokens got cheaper. Compute didn't.",
+      "sub": "Price change since July 12, 2026",
+      "signed": true,
+      "suffix": "%",
+      "rows": [
+        {
+          "label": "Nvidia B300 GPU rent",
+          "value": 106
+        },
+        {
+          "label": "Nvidia B200 GPU rent",
+          "value": 66
+        },
+        {
+          "label": "Nvidia H100 GPU rent",
+          "value": 17
+        },
+        {
+          "label": "Blended token cost",
+          "value": -58,
+          "hi": true
+        }
+      ],
+      "source": "SOURCE: ORNN DATA AS OF OCT 26, 2026, VIA A16Z"
+    },
+    {
+      "type": "list",
+      "title": "Plan for it",
+      "items": [
+        {
+          "title": "Budget AI like cloud, not seats",
+          "text": "Price per token falls; usage grows faster."
+        },
+        {
+          "title": "Track spend per employee and team",
+          "text": "Know who is driving the bill."
+        },
+        {
+          "title": "Set usage alerts, review monthly",
+          "text": "The same rhythm as your cloud bill."
+        }
+      ]
+    },
+    {
+      "type": "closing",
+      "title": "Follow FringeLines",
+      "sub": "Weekly AI takes from builders.",
+      "tone": "green"
+    }
+  ]
+}

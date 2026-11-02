@@ -1,0 +1,19 @@
+{
+  "headline": ["Build vs. buy,", "rewritten."],
+  "dek": "AI makes building your own GTM tools realistic again. After a decade of unbundling, the stack is getting a rethink.",
+  "hero": {"label": "GTM stack"},
+  "callouts": [
+    {"title": "Bundle", "text": "One platform did it all. Think Salesforce."},
+    {"title": "Unbundle", "text": "A point tool for every job: the \"$50K GTM stack.\""},
+    {"title": "Paper cuts", "text": "Subscriptions pile up like a new cable bill."},
+    {"title": "Rebuild", "text": "Teams build CRMs and agents in Claude instead."}
+  ],
+  "side": {"title": "In the field", "text": "One of Quinn's customers had already built the tool he pitched. Another is buying an AI agent instead."},
+  "why": {"title": "How to choose", "items": [
+    {"icon": "brain", "title": "Build", "text": "Core workflow, unique data."},
+    {"icon": "bolt", "title": "Buy an agent", "text": "Speed matters more than control."},
+    {"icon": "shield", "title": "Keep the platform", "text": "Scale, compliance, many users."}
+  ]},
+  "byline": {"name": "Fringe Lines", "org": "Episode of Oct 30, 2026"},
+  "sources": "Fringe Lines podcast, Oct 30, 2026. \"How to choose\" is Fringe Lines' take."
+}

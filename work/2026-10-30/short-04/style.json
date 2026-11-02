@@ -1,0 +1,15 @@
+{
+  "hook": {"text": "A week of *Claude*, gone in 2 days", "end": 2.6},
+  "outro": {"text": "Are you *token maxing* yet?", "hold": 2.0},
+  "emphasis": ["whole", "week", "burning", "claude", "claude,", "two", "three", "days.", "$20", "$100", "more", "pocket", "org", "token", "maxing"],
+  "scenes": [
+    {"at": 0.0, "mode": "full"},
+    {"at": 3.0, "mode": "card"},
+    {"at": 10.0, "mode": "graphic", "graphic": {"type": "stat", "kicker": "Weekly usage limit", "value": 3, "suffix": " days", "label": "to burn through *most* of a week"}},
+    {"at": 14.1, "mode": "card"},
+    {"at": 16.6, "mode": "graphic", "graphic": {"type": "stat", "kicker": "Plan check", "prefix": "$", "value": 20, "suffix": "/mo", "label": "the starter plan"}},
+    {"at": 19.2, "mode": "graphic", "graphic": {"type": "stat", "kicker": "Upgraded to", "prefix": "$", "value": 100, "suffix": "/mo", "label": "and *still* wants more"}},
+    {"at": 23.5, "mode": "card"},
+    {"at": 26.3, "mode": "full"}
+  ]
+}

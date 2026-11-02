@@ -1,0 +1,107 @@
+{
+  "brand": "Fringe Lines",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Fringe Lines · AI search",
+      "headline": "Your buyers stopped *clicking links*. They're asking *AI* instead."
+    },
+    {
+      "type": "graphic",
+      "graphic": {
+        "type": "quote",
+        "text": "Now I just go talk to *AI Mode*, because I want an answer.",
+        "by": "Quinn, Fringe Lines"
+      }
+    },
+    {
+      "type": "text",
+      "number": "01",
+      "title": "What is AEO?",
+      "subtitle": "Answer engine optimization.",
+      "body": "SEO gets you ranked in a list of links. AEO gets you cited inside the answer itself, in ChatGPT, Google's AI Mode, Gemini and Perplexity."
+    },
+    {
+      "type": "graphic",
+      "headline": "AI referral traffic is *still surging*, just less wildly",
+      "graphic": {
+        "type": "bars",
+        "kicker": "AI-referred consumer traffic, year over year",
+        "signed": true,
+        "suffix": "%",
+        "rows": [
+          {
+            "label": "March 2026",
+            "value": 269
+          },
+          {
+            "label": "May 2026",
+            "value": 138
+          },
+          {
+            "label": "July 2026",
+            "value": 62,
+            "hi": true
+          }
+        ]
+      },
+      "credit": "Data: Adobe, via J.P. Morgan (Oct 27, 2026) and a16z"
+    },
+    {
+      "type": "graphic",
+      "headline": "AI visitors are *high-intent* visitors",
+      "graphic": {
+        "type": "bars",
+        "kicker": "AI-referred vs. other traffic · July 2026",
+        "signed": true,
+        "suffix": "%",
+        "rows": [
+          {
+            "label": "Conversion rate",
+            "value": 60,
+            "hi": true
+          },
+          {
+            "label": "Time on site",
+            "value": 59
+          },
+          {
+            "label": "Revenue per visit",
+            "value": 53,
+            "hi": true
+          },
+          {
+            "label": "Bounce rate",
+            "value": -34
+          }
+        ]
+      },
+      "credit": "Data: Adobe, via J.P. Morgan (Oct 27, 2026) and a16z"
+    },
+    {
+      "type": "graphic",
+      "headline": "And the *ads* are moving into the chat",
+      "graphic": {
+        "type": "stat",
+        "kicker": "ChatGPT ads · first six weeks",
+        "prefix": "$",
+        "value": 100,
+        "suffix": "M+",
+        "label": "annualized ad revenue. Later reports put it near *$1B*."
+      },
+      "credit": "Source: OpenAI via Reuters, Mar 2026; $1B run rate per later press reports, unconfirmed by OpenAI"
+    },
+    {
+      "type": "text",
+      "number": "02",
+      "title": "3 moves this quarter",
+      "subtitle": "Show up in the *answer*.",
+      "body": "Ask ChatGPT and AI Mode the questions your buyers ask and see who gets cited. Publish clear, specific answers on your site. Track AI referrals as their own channel."
+    },
+    {
+      "type": "cta",
+      "headline": "Follow *Fringe Lines*",
+      "sub": "Weekly AI takes from builders"
+    }
+  ]
+}

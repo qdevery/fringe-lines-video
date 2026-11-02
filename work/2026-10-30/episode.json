@@ -1,0 +1,198 @@
+{
+  "title": "FRINGE LINES",
+  "subtitle": "October 30, 2026",
+  "range": [
+    "so it's the day before halloween",
+    "see you next week"
+  ],
+  "names": [
+    {
+      "say": "so it's the day before halloween",
+      "kicker": "Fringe Lines",
+      "title": "Quinn"
+    },
+    {
+      "say": "i actually started a thing with claude",
+      "kicker": "Fringe Lines",
+      "title": "Doom"
+    }
+  ],
+  "chapters": [
+    {
+      "say": "call it the morning loop",
+      "title": "The Morning Loop: agents for AEs"
+    },
+    {
+      "say": "microsoft just offered",
+      "title": "Microsoft: grow without growing headcount"
+    },
+    {
+      "say": "do want to really quick go back",
+      "title": "Build vs. buy: the CRM debate"
+    },
+    {
+      "say": "twitter spat",
+      "title": "Databricks vs. Snowflake"
+    },
+    {
+      "say": "just on token usage",
+      "title": "Token usage & weekly limits"
+    },
+    {
+      "say": "one of my nerd at night projects",
+      "title": "Can AI edit our videos?"
+    },
+    {
+      "say": "made a bet on google",
+      "title": "Google earnings: Search vs. AI mode"
+    },
+    {
+      "say": "answer engine optimization",
+      "title": "AEO: answer engine optimization"
+    },
+    {
+      "say": "microsoft this week",
+      "title": "Microsoft: doing more with less"
+    },
+    {
+      "say": "analysis for anthropic",
+      "title": "Anthropic's S-1: 900% net revenue retention"
+    },
+    {
+      "say": "the atlanta fed",
+      "title": "Atlanta Fed: AI spend per employee"
+    },
+    {
+      "say": "who has an llm",
+      "title": "Who owns the full AI stack?"
+    }
+  ],
+  "intro": {
+    "topics": [
+      "The Morning Loop",
+      "Microsoft headcount",
+      "Build vs. buy",
+      "Token limits",
+      "Google vs. AI mode",
+      "Anthropic's S-1",
+      "AI spend"
+    ],
+    "clips": [
+      {
+        "say": "microsoft just offered",
+        "until": "employees to leave",
+        "tag": "AI & jobs",
+        "replace": {
+          "27": "27%"
+        },
+        "graphic_on": "27%",
+        "graphic": {
+          "type": "stat",
+          "kicker": "Microsoft buyout offer",
+          "value": 27,
+          "suffix": "%",
+          "label": "of employees offered a payout to *leave*"
+        }
+      },
+      {
+        "say": "how do you have",
+        "until": "revenue retention",
+        "tag": "Anthropic's S-1",
+        "replace": {
+          "900": "900%"
+        },
+        "graphic_on": "how",
+        "graphic": {
+          "type": "stat",
+          "kicker": "Anthropic S-1",
+          "value": 900,
+          "suffix": "%",
+          "label": "net revenue *retention*"
+        }
+      },
+      {
+        "say": "databricks has already seen",
+        "until": "than humans",
+        "tag": "Agents at work",
+        "replace": {
+          "sequel": "SQL",
+          "a": ""
+        },
+        "graphic_on": "more",
+        "graphic": {
+          "type": "headline",
+          "source": "Databricks",
+          "title": "Agents now run more SQL than humans",
+          "highlight": "more SQL than humans"
+        }
+      },
+      {
+        "say": "tokens are going to seep",
+        "until": "like the internet",
+        "tag": "Tokens everywhere"
+      },
+      {
+        "say": "well, maybe i do need",
+        "until": "paying subscriptions",
+        "tag": "The GTM stack"
+      },
+      {
+        "say": "now i'm death by paper cuts",
+        "until": "gtm subscriptions",
+        "tag": "Subscription fatigue",
+        "replace": {
+          "gtm": "GTM"
+        },
+        "graphic_on": "death",
+        "graphic": {
+          "type": "quote",
+          "text": "Death by *paper cuts.*"
+        }
+      },
+      {
+        "say": "if i was at an org",
+        "until": "token maxing",
+        "tag": "Token maxing",
+        "replace": {
+          "i'm": "I'd"
+        }
+      },
+      {
+        "say": "place your bets now",
+        "until": "tuition later",
+        "tag": "Hyperscalers"
+      },
+      {
+        "say": "can't put a price",
+        "until": "super intelligence",
+        "tag": "Superintelligence"
+      }
+    ],
+    "style": "v2",
+    "title": "Fringe Lines",
+    "title_seconds": 4.5,
+    "emphasis": [
+      "27%",
+      "leave",
+      "900%",
+      "retention",
+      "sql",
+      "agents",
+      "humans",
+      "everything",
+      "internet",
+      "tired",
+      "subscriptions",
+      "death",
+      "paper",
+      "cuts",
+      "token",
+      "maxing",
+      "bets",
+      "tuition",
+      "price",
+      "super",
+      "intelligence"
+    ]
+  }
+}

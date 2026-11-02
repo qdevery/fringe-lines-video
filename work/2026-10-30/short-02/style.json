@@ -1,0 +1,19 @@
+{
+  "hook": {"text": "Microsoft wants *27%* of its staff to quit", "end": 2.8},
+  "outro": {"text": "Grow *without* growing *headcount*", "hold": 2.0},
+  "emphasis": ["microsoft", "27%", "leave", "60,000", "substantial", "flat", "dramatically", "half", "million", "scary", "ai", "jobs", "cooking", "grow", "without", "growing"],
+  "scenes": [
+    {"at": 0.0, "mode": "full"},
+    {"at": 3.0, "mode": "graphic", "graphic": {"type": "stat", "kicker": "Microsoft buyout offer", "value": 27, "suffix": "%", "label": "of employees offered a payout to *leave*"}},
+    {"at": 6.2, "mode": "card"},
+    {"at": 10.7, "mode": "graphic", "graphic": {"type": "people", "kicker": "If everyone said yes", "value": "~60,000", "label": "people, and they *don't* expect most to take it", "filled": 0.27}},
+    {"at": 14.1, "mode": "card"},
+    {"at": 16.8, "mode": "graphic", "graphic": {"type": "lines", "kicker": "Last couple of quarters", "series": [{"label": "Revenue", "shape": "up"}, {"label": "Headcount", "shape": "flat"}], "caption": "Same team. *Way* more revenue."}},
+    {"at": 21.8, "mode": "card"},
+    {"at": 23.4, "mode": "graphic", "graphic": {"type": "stat", "kicker": "Earnings per employee", "prefix": "+$", "value": 500, "suffix": "K", "label": "added per head, *roughly*"}},
+    {"at": 27.1, "mode": "card"},
+    {"at": 37.1, "mode": "full"},
+    {"at": 39.0, "mode": "card"},
+    {"at": 40.7, "mode": "graphic", "graphic": {"type": "quote", "text": "Grow *without* growing headcount."}}
+  ]
+}

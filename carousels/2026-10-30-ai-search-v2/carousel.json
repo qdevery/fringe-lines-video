@@ -1,0 +1,106 @@
+{
+  "template": "v2",
+  "brand": "FringeLines",
+  "slides": [
+    {
+      "type": "cover",
+      "eyebrow": "FringeLines · AI search",
+      "title": "Buyers stopped clicking links",
+      "sub": "They ask AI instead. Here's what that means for your pipeline.",
+      "tone": "blue"
+    },
+    {
+      "type": "quote",
+      "text": "Now I just go talk to AI Mode, because I want an answer.",
+      "by": "Quinn · FringeLines co-host",
+      "tone": "blue"
+    },
+    {
+      "type": "point",
+      "number": "01",
+      "title": "What is AEO?",
+      "text": "Answer engine optimization. SEO gets you ranked in a list of links. AEO gets you cited inside the answer, in ChatGPT, Google's AI Mode, Gemini and Perplexity."
+    },
+    {
+      "type": "bars",
+      "title": "AI referrals are still surging",
+      "sub": "AI-referred consumer traffic, growth year over year",
+      "signed": true,
+      "suffix": "%",
+      "rows": [
+        {
+          "label": "March 2026",
+          "value": 269
+        },
+        {
+          "label": "May 2026",
+          "value": 138
+        },
+        {
+          "label": "July 2026",
+          "value": 62,
+          "hi": true
+        }
+      ],
+      "source": "SOURCE: ADOBE, VIA J.P. MORGAN (OCT 27, 2026) AND A16Z"
+    },
+    {
+      "type": "bars",
+      "title": "AI visitors are high-intent visitors",
+      "sub": "AI-referred vs. other traffic, July 2026",
+      "signed": true,
+      "suffix": "%",
+      "rows": [
+        {
+          "label": "Conversion rate",
+          "value": 60,
+          "hi": true
+        },
+        {
+          "label": "Time on site",
+          "value": 59
+        },
+        {
+          "label": "Revenue per visit",
+          "value": 53
+        },
+        {
+          "label": "Bounce rate",
+          "value": -34
+        }
+      ],
+      "source": "SOURCE: ADOBE, VIA J.P. MORGAN (OCT 27, 2026) AND A16Z"
+    },
+    {
+      "type": "stat",
+      "eyebrow": "ChatGPT ads · first six weeks",
+      "value": "$100M+",
+      "text": "in annualized ad revenue. Later press reports put it near $1B, unconfirmed by OpenAI.",
+      "source": "SOURCE: OPENAI VIA REUTERS, MARCH 2026"
+    },
+    {
+      "type": "list",
+      "title": "3 moves this quarter",
+      "items": [
+        {
+          "title": "Ask AI what your buyers ask",
+          "text": "See who gets cited, and why."
+        },
+        {
+          "title": "Publish clear, specific answers",
+          "text": "On your own site, in plain language."
+        },
+        {
+          "title": "Track AI referrals as a channel",
+          "text": "Separate them from organic search."
+        }
+      ]
+    },
+    {
+      "type": "closing",
+      "title": "Follow FringeLines",
+      "sub": "Weekly AI takes from builders.",
+      "tone": "blue"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "headline": ["Your AI chief", "of staff."],
+  "dek": "Quinn's \"Morning Loop\" agent reads his work tools every weekday at 8 AM and hands him a brief before he opens his laptop.",
+  "hero": {"label": "Morning Loop"},
+  "callouts": [
+    {"title": "Sources", "text": "Outlook mail, calendar and To-Do, Slack, Asana, SharePoint."},
+    {"title": "Connectors", "text": "Approved enterprise connectors reach into each source."},
+    {"title": "Schedule", "text": "Runs weekdays at 8 AM in the cloud, laptop closed."},
+    {"title": "Outputs", "text": "Flags misses, syncs to-dos to Asana, sends a brief."}
+  ],
+  "side": {"title": "Closing the loop", "text": "At the end of the day he replies to the brief with what happened, and it updates everything."},
+  "why": {"title": "Why build one", "items": [
+    {"icon": "clock", "title": "Start ahead", "text": "The triage is done before 9."},
+    {"icon": "check", "title": "Nothing slips", "text": "It flags what you missed."},
+    {"icon": "plug", "title": "No new tools", "text": "Uses the stack you already pay for."}
+  ]},
+  "byline": {"name": "Fringe Lines", "org": "Episode of Oct 30, 2026"},
+  "sources": "Fringe Lines podcast, Oct 30, 2026; Quinn's Morning Loop architecture slide."
+}

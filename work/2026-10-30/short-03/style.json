@@ -1,0 +1,16 @@
+{
+  "hook": {"text": "Is your GTM stack *bleeding* you dry?", "end": 2.8},
+  "outro": {"text": "Death by a thousand *subscriptions*", "hold": 2.0},
+  "emphasis": ["victim", "shade", "50k", "gtm", "tired", "subscriptions", "build", "crm", "salesforce's", "unbundling", "salesforce", "cable", "death", "paper", "cuts"],
+  "scenes": [
+    {"at": 0.0, "mode": "full"},
+    {"at": 3.2, "mode": "graphic", "graphic": {"type": "stat", "kicker": "The LinkedIn flex", "prefix": "$", "value": 50, "suffix": "K", "label": "a year on *GTM* tools"}},
+    {"at": 6.4, "mode": "card"},
+    {"at": 13.9, "mode": "graphic", "graphic": {"type": "quote", "text": "I'm just going to go build the damn *CRM*."}},
+    {"at": 16.0, "mode": "card"},
+    {"at": 21.3, "mode": "graphic", "graphic": {"type": "headline", "source": "SaaS, circa 2021", "title": "The great unbundling", "highlight": "unbundling"}},
+    {"at": 23.3, "mode": "card"},
+    {"at": 26.6, "mode": "graphic", "graphic": {"type": "list", "title": "Cable, *again*", "items": ["Netflix", "Hulu", "YouTube TV", "HBO"]}},
+    {"at": 32.2, "mode": "full"}
+  ]
+}

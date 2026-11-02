@@ -1,0 +1,69 @@
+{
+  "brand": "Fringe Lines",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Fringe Lines · Tokens",
+      "headline": "Are you *token maxing*? 5 signs you've crossed the line"
+    },
+    {
+      "type": "graphic",
+      "headline": "01 · Your weekly limit is gone by *Wednesday*",
+      "graphic": {
+        "type": "stat",
+        "kicker": "Doom's weekly Claude limit",
+        "value": 3,
+        "suffix": " days",
+        "label": "to burn through most of it. It used to last *all week*."
+      }
+    },
+    {
+      "type": "text",
+      "number": "02",
+      "title": "You upgraded your plan",
+      "subtitle": "And you're *still* rationing.",
+      "body": "Doom moved up to the $100 plan and still has more he wants to run. Every extra project now competes for the same weekly allowance."
+    },
+    {
+      "type": "text",
+      "number": "03",
+      "title": "You run nerd-at-night projects",
+      "subtitle": "Automations work while you *sleep*.",
+      "body": "Side projects and background automations quietly eat tokens. Doom had to audit his to find which ones he could switch off."
+    },
+    {
+      "type": "graphic",
+      "headline": "04 · You know your *reset schedule* by heart",
+      "graphic": {
+        "type": "list",
+        "title": "When does it *reset*?",
+        "items": [
+          "Doom's Claude: *Monday night*",
+          "Codex: feels like a *rolling week*",
+          "Overnight: 53% → *80%*"
+        ]
+      }
+    },
+    {
+      "type": "graphic",
+      "headline": "05 · You'd max out if *work* paid",
+      "graphic": {
+        "type": "quote",
+        "text": "If I was at an org that could just run it, I'd be *token maxing*.",
+        "by": "Doom, Fringe Lines"
+      }
+    },
+    {
+      "type": "text",
+      "number": "→",
+      "title": "Tokens are the new cloud bill",
+      "subtitle": "Usage only goes *one way*.",
+      "body": "Token prices keep falling, but usage grows faster. Quinn's take: tokens will seep into everything we do, quietly, like the internet did."
+    },
+    {
+      "type": "cta",
+      "headline": "Follow *Fringe Lines*",
+      "sub": "Before your limit resets"
+    }
+  ]
+}

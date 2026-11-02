@@ -1,0 +1,90 @@
+{
+  "brand": "Fringe Lines",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Fringe Lines \u00b7 Big Tech scorecard",
+      "headline": "Revenue up. *Headcount flat.* The new Big Tech playbook",
+      "graphic": {
+        "type": "lines",
+        "kicker": "The pattern",
+        "series": [
+          {
+            "label": "Revenue",
+            "shape": "up"
+          },
+          {
+            "label": "Headcount",
+            "shape": "flat"
+          }
+        ]
+      }
+    },
+    {
+      "type": "photo",
+      "image": "images/microsoft-chart.png",
+      "fit": "contain",
+      "headline": "Microsoft's *revenue kept climbing* while headcount stalled",
+      "credit": "Chart: Exponential View, from Microsoft 10-K filings"
+    },
+    {
+      "type": "graphic",
+      "headline": "Then came *the buyout*",
+      "graphic": {
+        "type": "people",
+        "kicker": "Voluntary exit offer \u00b7 Oct 2026",
+        "value": "~60,000",
+        "label": "employees offered a buyout, about *a quarter* of staff",
+        "filled": 0.27
+      },
+      "credit": "Source: Microsoft voluntary exit offer, reported Oct 26, 2026"
+    },
+    {
+      "type": "graphic",
+      "graphic": {
+        "type": "quote",
+        "text": "They figured out how to grow *without* growing headcount.",
+        "by": "Doom, Fringe Lines"
+      }
+    },
+    {
+      "type": "graphic",
+      "headline": "Meanwhile at Google: *search is steady*",
+      "graphic": {
+        "type": "stat",
+        "kicker": "Google Search \u00b7 Q3 2026",
+        "prefix": "+",
+        "value": 12,
+        "suffix": "%",
+        "label": "year over year, to *$63.4B*"
+      },
+      "credit": "Source: Alphabet Q3 2026 results"
+    },
+    {
+      "type": "graphic",
+      "headline": "\u2026and *cloud is the rocket*",
+      "graphic": {
+        "type": "stat",
+        "kicker": "Google Cloud \u00b7 Q3 2026",
+        "prefix": "$",
+        "value": 30.7,
+        "decimals": 1,
+        "suffix": "B",
+        "label": "revenue, *more than doubled* year over year"
+      },
+      "credit": "Source: Alphabet Q3 2026 results"
+    },
+    {
+      "type": "text",
+      "number": "?",
+      "title": "The lease question",
+      "subtitle": "Renting compute buys flexibility *today*.",
+      "body": "Quinn's take: Microsoft leans on leased capacity from neoclouds like CoreWeave. If those leases reset to market rates, margins could take a hit. If demand cools, renters win."
+    },
+    {
+      "type": "cta",
+      "headline": "Place your *bets* now",
+      "sub": "Follow Fringe Lines for weekly AI takes"
+    }
+  ]
+}

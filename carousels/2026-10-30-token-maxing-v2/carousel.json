@@ -1,0 +1,94 @@
+{
+  "template": "v2",
+  "brand": "FringeLines",
+  "slides": [
+    {
+      "type": "cover",
+      "eyebrow": "FringeLines · Tokens",
+      "title": "Are you token maxing?",
+      "sub": "Five signs you've crossed the line.",
+      "tone": "orange"
+    },
+    {
+      "type": "stat",
+      "eyebrow": "Sign 01 · limit gone early",
+      "value": "3 days",
+      "text": "for Doom to burn most of his weekly Claude limit. It used to last all week.",
+      "source": "AS SAID ON THE FRINGELINES PODCAST · OCT 30, 2026"
+    },
+    {
+      "type": "point",
+      "number": "02",
+      "title": "You upgraded your plan",
+      "text": "Doom moved up to the $100 plan and is still rationing. Every extra project competes for the same weekly allowance.",
+      "source": "AS SAID ON THE FRINGELINES PODCAST · OCT 30, 2026"
+    },
+    {
+      "type": "point",
+      "number": "03",
+      "title": "You run nerd-at-night projects",
+      "text": "Side projects and background automations quietly eat tokens. Doom had to audit his to find which ones he could switch off.",
+      "source": "AS SAID ON THE FRINGELINES PODCAST · OCT 30, 2026"
+    },
+    {
+      "type": "list",
+      "title": "04 · You know your reset schedule",
+      "items": [
+        {
+          "title": "Doom's Claude: Monday night"
+        },
+        {
+          "title": "Codex: feels like a rolling week"
+        },
+        {
+          "title": "Quinn: 53% left, then 80% overnight"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "text": "If I was at an org that could just run it, I'd be token maxing.",
+      "by": "Sign 05 · Doom, FringeLines co-host",
+      "tone": "orange"
+    },
+    {
+      "type": "bars",
+      "title": "Tokens got cheaper. Compute didn't.",
+      "sub": "Price change since July 12, 2026",
+      "signed": true,
+      "suffix": "%",
+      "rows": [
+        {
+          "label": "Nvidia B300 GPU rent",
+          "value": 106
+        },
+        {
+          "label": "Nvidia B200 GPU rent",
+          "value": 66
+        },
+        {
+          "label": "Nvidia H100 GPU rent",
+          "value": 17
+        },
+        {
+          "label": "Blended token cost",
+          "value": -58,
+          "hi": true
+        }
+      ],
+      "source": "SOURCE: ORNN DATA AS OF OCT 26, 2026, VIA A16Z"
+    },
+    {
+      "type": "point",
+      "number": "→",
+      "title": "Tokens are the new cloud bill",
+      "text": "Token prices keep falling, but usage grows faster. Quinn's take: tokens will seep into everything we do, quietly, the way the internet did."
+    },
+    {
+      "type": "closing",
+      "title": "Follow FringeLines",
+      "sub": "Before your limit resets.",
+      "tone": "orange"
+    }
+  ]
+}

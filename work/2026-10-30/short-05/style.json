@@ -1,0 +1,17 @@
+{
+  "hook": {"text": "I let *Codex* edit my videos", "end": 2.6},
+  "outro": {"text": "Check back in *three months*", "hold": 2.0},
+  "emphasis": ["codex", "descript", "scary", "computer", "decent", "expensive", "credits", "sloppy", "amazing", "credit", "ideal", "test", "three", "months"],
+  "scenes": [
+    {"at": 0.0, "mode": "full"},
+    {"at": 2.7, "mode": "card"},
+    {"at": 9.6, "mode": "graphic", "graphic": {"type": "list", "title": "The *experiment*", "items": ["Document the edit process", "Hand it to *Codex*", "Let it drive the computer"]}},
+    {"at": 15.0, "mode": "card"},
+    {"at": 17.4, "mode": "graphic", "graphic": {"type": "headline", "source": "The verdict", "title": "A decent job, but way more expensive", "highlight": "way more expensive"}},
+    {"at": 22.6, "mode": "card"},
+    {"at": 25.6, "mode": "full"},
+    {"at": 28.0, "mode": "card"},
+    {"at": 32.0, "mode": "graphic", "graphic": {"type": "list", "title": "What went *wrong*", "items": ["Didn't follow the process", "Burned *credits*", "Not the ideal experience"]}},
+    {"at": 39.4, "mode": "card"}
+  ]
+}

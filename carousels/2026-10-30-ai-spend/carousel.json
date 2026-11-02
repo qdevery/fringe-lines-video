@@ -1,0 +1,157 @@
+{
+  "brand": "Fringe Lines",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Fringe Lines · AI budgets",
+      "headline": "AI spend per employee *nearly doubled*. Here's who's driving it.",
+      "graphic": {
+        "type": "stat",
+        "kicker": "2025 → 2026",
+        "prefix": "+",
+        "value": 96,
+        "suffix": "%",
+        "label": "AI spend per employee"
+      }
+    },
+    {
+      "type": "graphic",
+      "headline": "The average AI-using firm now spends *$1K+ a head*",
+      "graphic": {
+        "type": "stat",
+        "kicker": "Mean AI spend per employee",
+        "prefix": "$",
+        "value": 1024,
+        "label": "in 2026, up from about *$520* in 2025"
+      },
+      "credit": "Data: Atlanta Fed Business Uncertainty Survey, Oct 2026 (N=880), via a16z. Mean, employment-weighted, firms using AI."
+    },
+    {
+      "type": "graphic",
+      "headline": "Every industry is up *85%+*",
+      "graphic": {
+        "type": "bars",
+        "kicker": "Growth in AI spend per employee",
+        "signed": true,
+        "suffix": "%",
+        "decimals": 0,
+        "rows": [
+          {
+            "label": "Retail, wholesale, transport",
+            "value": 131,
+            "hi": true
+          },
+          {
+            "label": "Business & professional services",
+            "value": 98
+          },
+          {
+            "label": "Other services",
+            "value": 91
+          },
+          {
+            "label": "Construction, real estate, utilities",
+            "value": 89
+          },
+          {
+            "label": "Manufacturing",
+            "value": 87
+          }
+        ]
+      },
+      "credit": "Data: Atlanta Fed Business Uncertainty Survey, Oct 2026 (N=880), via a16z. Mean, employment-weighted, firms using AI."
+    },
+    {
+      "type": "graphic",
+      "headline": "Mid-size firms are *catching up fastest*",
+      "graphic": {
+        "type": "bars",
+        "kicker": "Growth by company size",
+        "signed": true,
+        "suffix": "%",
+        "rows": [
+          {
+            "label": "99–249 employees",
+            "value": 142,
+            "hi": true
+          },
+          {
+            "label": "50–99 employees",
+            "value": 134,
+            "hi": true
+          },
+          {
+            "label": "250+ employees",
+            "value": 88
+          },
+          {
+            "label": "0–50 employees",
+            "value": 78
+          }
+        ]
+      },
+      "credit": "Data: Atlanta Fed Business Uncertainty Survey, Oct 2026 (N=880), via a16z. Mean, employment-weighted, firms using AI."
+    },
+    {
+      "type": "text",
+      "number": "?",
+      "title": "The solopreneur effect",
+      "subtitle": "Tiny firms spend like *big ones*.",
+      "body": "Firms under 50 people spend nearly as much per head as companies with 250+. Quinn's theory: solo founders and small teams are paying for serious AI, with few employees to divide it by."
+    },
+    {
+      "type": "graphic",
+      "headline": "The same customers, *paying 9×*",
+      "graphic": {
+        "type": "stat",
+        "kicker": "Anthropic net revenue retention",
+        "value": 900,
+        "suffix": "%",
+        "label": "existing business customers spend *9×* what they did a year earlier"
+      },
+      "credit": "Source: Anthropic S-1, as of Sep 30, 2026. Excludes Claude Pro and Max subscribers."
+    },
+    {
+      "type": "graphic",
+      "headline": "Tokens got cheaper. *Compute didn't.*",
+      "graphic": {
+        "type": "bars",
+        "kicker": "Price change since July 12, 2026",
+        "signed": true,
+        "suffix": "%",
+        "decimals": 0,
+        "rows": [
+          {
+            "label": "Nvidia B300 GPU rent",
+            "value": 106
+          },
+          {
+            "label": "Nvidia B200 GPU rent",
+            "value": 66
+          },
+          {
+            "label": "Nvidia H100 GPU rent",
+            "value": 17
+          },
+          {
+            "label": "Blended *token* cost",
+            "value": -58
+          }
+        ]
+      },
+      "credit": "Data: Ornn Data as of Oct 26, 2026, via a16z"
+    },
+    {
+      "type": "text",
+      "number": "→",
+      "title": "Plan for it",
+      "subtitle": "Budget AI like *cloud*, not like seats.",
+      "body": "Price per token keeps falling, but usage grows faster. Track AI spend per employee and per team, set usage alerts, and review it monthly like your cloud bill."
+    },
+    {
+      "type": "cta",
+      "headline": "Follow *Fringe Lines*",
+      "sub": "Weekly AI takes from builders"
+    }
+  ]
+}

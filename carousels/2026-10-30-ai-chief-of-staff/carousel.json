@@ -1,0 +1,63 @@
+{
+  "brand": "Fringe Lines",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Fringe Lines \u00b7 How-to",
+      "headline": "Build your own *AI chief of staff*",
+      "graphic": {
+        "type": "list",
+        "title": "Every weekday, *8 AM*",
+        "items": [
+          "Read your inbox + Slack",
+          "Update your to-dos",
+          "Send you *a brief*"
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "number": "01",
+      "title": "The problem",
+      "subtitle": "Meeting notes and follow-ups kept *slipping*.",
+      "body": "Recordings were inconsistent and everything had to be copied and pasted by hand. So Quinn asked: what if a loop ran every morning and pulled it all together?"
+    },
+    {
+      "type": "image",
+      "image": "images/infographic.png"
+    },
+    {
+      "type": "photo",
+      "image": "images/layers-1-2.png",
+      "fit": "contain",
+      "headline": "Sources + connectors: *plug into what you already use*",
+      "credit": "Quinn's Morning Loop architecture"
+    },
+    {
+      "type": "photo",
+      "image": "images/layers-3-4.png",
+      "fit": "contain",
+      "headline": "Runs at *8 AM*, laptop closed. Ends in *a brief*.",
+      "credit": "Quinn's Morning Loop architecture"
+    },
+    {
+      "type": "text",
+      "number": "02",
+      "title": "Close the loop",
+      "subtitle": "The brief is a *two-way* conversation.",
+      "body": "At the end of the day, reply with what happened. The agent updates your to-dos and Asana, so tomorrow's brief starts from reality."
+    },
+    {
+      "type": "text",
+      "number": "03",
+      "title": "Start this week",
+      "subtitle": "Keep version one small:",
+      "body": "Pick two sources. Write one prompt playbook. Schedule it for 8 AM. Ask for a five-bullet brief. Add sources once you trust it."
+    },
+    {
+      "type": "cta",
+      "headline": "Follow *Fringe Lines*",
+      "sub": "Weekly AI takes from builders"
+    }
+  ]
+}

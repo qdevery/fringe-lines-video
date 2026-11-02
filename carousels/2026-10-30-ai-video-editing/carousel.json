@@ -1,0 +1,80 @@
+{
+  "brand": "Fringe Lines",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Fringe Lines · Behind the scenes",
+      "headline": "We asked AI to edit our podcast. *Here's what happened.*"
+    },
+    {
+      "type": "text",
+      "number": "01",
+      "title": "Attempt 1: let the agent click",
+      "subtitle": "Codex + computer use in *Descript*.",
+      "body": "Quinn wrote down his editing process and let Codex drive Descript. It did a decent job, but it was sloppy and burned far more Descript credits than editing by hand."
+    },
+    {
+      "type": "graphic",
+      "headline": "Attempt 2: *one prompt*",
+      "graphic": {
+        "type": "people",
+        "kicker": "Doom's deck-to-video test",
+        "value": "~1/3",
+        "filled": 0.33,
+        "label": "of his Descript credits, gone. The video *missed the mark*."
+      }
+    },
+    {
+      "type": "graphic",
+      "graphic": {
+        "type": "quote",
+        "text": "I could have just done this in *Descript*.",
+        "by": "Doom, Fringe Lines"
+      }
+    },
+    {
+      "type": "text",
+      "number": "02",
+      "title": "Show, don't tell",
+      "subtitle": "Examples beat *one-shot* prompts.",
+      "body": "Give the agent videos you like, name what makes them work, and save each style as a reusable skill. Then iterate, like you would with a new editor."
+    },
+    {
+      "type": "graphic",
+      "headline": "So we built a *pipeline* instead",
+      "graphic": {
+        "type": "list",
+        "title": "One recording in",
+        "items": [
+          "Transcribe it *locally*",
+          "Cut the filler words",
+          "Follow whoever's talking",
+          "Spin out *shorts* + slides"
+        ]
+      }
+    },
+    {
+      "type": "graphic",
+      "headline": "The Oct 30 episode, *by the numbers*",
+      "graphic": {
+        "type": "stat",
+        "kicker": "Cut automatically",
+        "value": 174,
+        "label": "filler words and stutters cut from *one episode*."
+      },
+      "credit": "Fringe Lines editing pilot"
+    },
+    {
+      "type": "text",
+      "number": "→",
+      "title": "The verdict",
+      "subtitle": "Don't let agents *click*. Let them *build*.",
+      "body": "An agent clicking through an editing app is slow and costly. An agent writing a repeatable pipeline, with a human making the calls, turned one recording into an episode, shorts and these slides."
+    },
+    {
+      "type": "cta",
+      "headline": "Follow *Fringe Lines*",
+      "sub": "Weekly AI takes from builders"
+    }
+  ]
+}

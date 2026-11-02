@@ -1,0 +1,89 @@
+{
+  "name": "howto-02",
+  "ranges": [
+    [
+      2158.6,
+      2192.2
+    ]
+  ],
+  "replace": {
+    "capex": "CapEx"
+  },
+  "title": "Microsoft is doing *more with less*",
+  "kicker": "Fringe Lines \u00b7 Chart breakdown",
+  "focus": [
+    {
+      "at": 0,
+      "box": [
+        0.04,
+        0.21,
+        0.92,
+        0.68
+      ]
+    },
+    {
+      "on": "headcount",
+      "box": [
+        0.42,
+        0.28,
+        0.5,
+        0.58
+      ],
+      "label": "Headcount: flat",
+      "mark": [
+        0.63,
+        0.36,
+        0.21,
+        0.45
+      ]
+    },
+    {
+      "on": "revenue",
+      "box": [
+        0.42,
+        0.28,
+        0.5,
+        0.58
+      ],
+      "label": "Revenue: up and to the right",
+      "mark": [
+        0.6,
+        0.37,
+        0.29,
+        0.25
+      ]
+    },
+    {
+      "on": "2021",
+      "box": [
+        0.42,
+        0.28,
+        0.5,
+        0.58
+      ],
+      "label": "The 2021\u201322 hiring jump",
+      "mark": [
+        0.645,
+        0.45,
+        0.07,
+        0.36
+      ]
+    },
+    {
+      "on": "doing",
+      "box": [
+        0.04,
+        0.21,
+        0.92,
+        0.68
+      ],
+      "label": "More with less"
+    }
+  ],
+  "clip": [
+    0,
+    0.105,
+    1,
+    0.895
+  ]
+}

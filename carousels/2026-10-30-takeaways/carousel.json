@@ -1,0 +1,60 @@
+{
+  "brand": "Fringe Lines",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Fringe Lines \u00b7 Oct 30",
+      "headline": "*5 AI signals* from this week that most teams are missing"
+    },
+    {
+      "type": "photo",
+      "image": "images/microsoft-chart.png",
+      "headline": "Microsoft's *revenue kept climbing* while headcount stayed flat",
+      "credit": "Chart: Exponential View, from Microsoft 10-K filings",
+      "fit": "contain"
+    },
+    {
+      "type": "photo",
+      "image": "images/atlanta-fed-chart.png",
+      "headline": "Companies now spend *$1K+ per employee* on AI, nearly 2x year over year",
+      "credit": "Atlanta Fed Business Uncertainty Survey, via a16z",
+      "fit": "contain"
+    },
+    {
+      "type": "graphic",
+      "headline": "Anthropic's S-1, *in one number*",
+      "graphic": {
+        "type": "stat",
+        "kicker": "Net revenue retention",
+        "value": 900,
+        "suffix": "%",
+        "label": "net revenue retention, as cited on the show"
+      }
+    },
+    {
+      "type": "text",
+      "number": "04",
+      "title": "Run a morning loop",
+      "subtitle": "An agent that reads your work before you do.",
+      "body": "Quinn's runs every weekday at 8 AM: it scans Outlook, Slack, Asana and SharePoint, updates his to-dos, and sends a brief before he opens his laptop."
+    },
+    {
+      "type": "photo",
+      "image": "images/morning-loop-slide.png",
+      "headline": "Four layers: *sources, connectors, a schedule, outputs*",
+      "fit": "contain"
+    },
+    {
+      "type": "text",
+      "number": "05",
+      "title": "Death by paper cuts",
+      "subtitle": "GTM subscriptions are the new *cable bundle*.",
+      "body": "We unbundled the CRM into a dozen tools. Now the bills add up, and building your own with AI is suddenly realistic."
+    },
+    {
+      "type": "cta",
+      "headline": "Follow *Fringe Lines*",
+      "sub": "New episodes every week"
+    }
+  ]
+}
