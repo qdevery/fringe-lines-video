@@ -9,6 +9,7 @@ import { HowTo } from "./HowTo";
 import { Carousel } from "./Carousel";
 import { CarouselV2 } from "./CarouselV2";
 import { Infographic } from "./Infographic";
+import { Monologue } from "./Monologue";
 
 type AnyFC = React.FC<Record<string, unknown>>;
 const meta = ({ props }: { props: Record<string, unknown> }) => ({
@@ -38,5 +39,7 @@ export const Root: React.FC = () => (
       defaultProps={{ slide: { type: "point", number: "01", title: "Title", text: "" }, index: 0, total: 1, brand: "FringeLines", durationInFrames: 1 }} calculateMetadata={meta} />
     <Composition id="Infographic" component={Infographic as unknown as AnyFC} width={1080} height={1350} fps={30} durationInFrames={1}
       defaultProps={{ headline: ["Headline", "accent."], dek: "", hero: {}, callouts: [], durationInFrames: 1 }} calculateMetadata={meta} />
+    <Composition id="Monologue" component={Monologue as unknown as AnyFC} width={1920} height={1080} fps={30} durationInFrames={300}
+      defaultProps={{ src: "clip.mp4", durationInFrames: 300, shots: [], beats: [] }} calculateMetadata={meta} />
   </>
 );

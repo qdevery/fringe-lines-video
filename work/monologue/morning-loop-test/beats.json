@@ -1,0 +1,25 @@
+{
+  "brand": "FringeLines",
+  "beats": [
+    {"type": "title", "at": 0.2, "end": 2.0, "eyebrow": "FringeLines · Monologue", "text": "The *morning loop*"},
+    {"type": "name", "at": 2.1, "end": 5.4, "text": "Quinn", "role": "Host · Fringe Lines"},
+    {"type": "chips", "at": 3.0, "end": 7.4, "side": "right", "items": [
+      {"text": "GTM loops", "at": 3.1}, {"text": "Coding loops", "at": 5.1, "tone": "blue"}]},
+    {"type": "text", "at": 7.6, "end": 11.3, "eyebrow": "What's a loop?", "text": "Loop's just a *stated goal* and then it works *autonomously*"},
+    {"type": "callout", "at": 11.5, "end": 16.2, "label": "The setup", "tone": "green", "text": "I use Quick Desktop with routines that execute at any time"},
+    {"type": "overlay", "at": 16.4, "end": 18.3, "text": "I usually run it at [7 AM]"},
+    {"type": "bw", "at": 19.4, "end": 21.7},
+    {"type": "overlay", "at": 19.4, "end": 21.7, "text": "So I did the *counting*."},
+    {"type": "stack", "at": 22.4, "end": 36.4, "title": "My core team · 4 people", "items": [
+      {"text": "Account executive", "at": 25.6}, {"text": "Solutions architect", "at": 26.4},
+      {"text": "Technical account manager", "at": 30.8}, {"text": "Customer success manager", "at": 33.0}]},
+    {"type": "steps", "at": 37.0, "end": 48.7, "title": "Five core specialists", "items": [
+      {"text": "Storage", "at": 39.3}, {"text": "Security", "at": 40.6}, {"text": "AI / ML", "at": 42.1},
+      {"text": "Database", "at": 43.1}, {"text": "Analytics", "at": 44.1}]},
+    {"type": "callout", "at": 49.3, "end": 51.1, "label": "Plus", "tone": "blue", "side": "left", "text": "All those specialists have an *SA*"},
+    {"type": "stat", "at": 51.2, "end": 55.1, "kicker": "My regular account team", "value": 14, "text": "people I'm interacting with on a regular basis",
+     "source": "Quinn's own count · Fringe Lines, Oct 30 2026"},
+    {"type": "cta", "at": 55.3, "end": 58.3, "text": "The full episode is at *fringelines.co*", "sub": "Link in description"},
+    {"type": "end", "at": 58.4, "end": 61.4, "eyebrow": "FringeLines · Next", "text": "Building the *morning loop*", "sub": "The full walkthrough is in this week's episode."}
+  ]
+}

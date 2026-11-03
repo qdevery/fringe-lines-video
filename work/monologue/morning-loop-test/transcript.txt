@@ -1,0 +1,24 @@
+So,@0.3 I@0.5 call@0.6 it@0.8 the@0.8 morning@0.9 loop,@1.2 right?@1.8
+So,@2.0 everybody's@2.1 been@2.5 talking@2.6 about@2.9 GTM@3.1 loops@3.9 and@4.5 the@4.8 coding@5.1 loops@5.4 has@5.7 been@5.8 around@5.9
+for@6.0 a@6.2 while,@6.2 then@6.5 GTM@6.6 loops.@7.1
+So,@7.6 loop's@7.9 just@8.2 kind@8.3 of@8.4 a@8.5 stated@8.6 goal@8.9 and@9.3 then@9.5 it@9.6 kind@9.7 of@9.8 works@9.9
+autonomously@10.2 to@10.8 it.@11.1
+So,@11.4 I@11.7 use@11.8 Quick@11.9 Desktop@12.1 and@12.5 we@13.0 have,@13.1 we've@13.2 got@13.6 some@13.6 cool@13.7 routines@13.9 on@14.4
+this@14.7 so@14.9 it@15.1 can@15.2 execute@15.3 at@15.8 any@16.0 time.@16.1
+So,@16.4 I@16.6 usually@16.6 run@16.8 it@17.0 at,@17.1 like,@17.3 7@17.5 a@17.7 .m.@17.9
+but@18.3 basically@18.4 my@18.8 thought,@18.9 so,@19.5 I@20.0 did@20.7 the@21.2 counting.@21.3
+like,@21.9 my@22.1 extended@22.3 team,@22.8 so@23.4 my@23.4 core@23.6 team,@23.8 you'll@24.4 remember@24.9 this,@25.1 account@25.6 executive@25.8 and@26.2
+solution@26.4 architect,@26.6 which@27.2 you@27.3 could@27.4 replace@27.5 with,@27.9 like,@28.0 sales@28.5 engineer.@28.7
+year.@29.0
+Then@29.9 you've@30.1 got@30.3 a@30.5 technical@30.8 account@31.1 manager.@31.4
+Sometimes@32.2 you@32.6 have@32.8 a@32.9 customer@33.0 success@33.2 manager@33.6 as@33.9 well.@34.1
+So@34.4 I@34.4 have@34.5 one@34.6 of@34.7 those@34.8 on@35.0 one@35.1 of@35.2 my@35.2 customers.@35.3
+that's@35.9 four@36.1 people.@36.3
+Then@37.0 you@37.4 have@37.5 your@37.8 specialists.@37.9
+So@38.6 you've@38.9 got@39.1 your@39.1 storage@39.3 specialists,@39.6 you've@40.2 got@40.4 your@40.5 security@40.6 specialists,@40.9 you've@41.6 got@41.8 your@41.9
+AIML@42.1 specialists,@42.6 your@43.0 database@43.1 specialists,@43.4 analytics@44.1 specialists.@44.4
+Then@45.3 there's@45.6 like@45.9 more@46.1 of@46.5 a@46.6 long@46.7 tail,@46.9 but@47.2 those@47.2 are@47.4 kind@47.5 of@47.6 the@47.6
+five@47.8 core@48.2 specialists.@48.4
+All@49.4 those@49.8 specialists@50.0 have@50.3 an@50.5 SA.@50.6
+So@51.2 that's@51.6 a@51.9 14@52.2 people@52.6 that@53.0 like@53.3 I'm@53.4 interacting@53.6 with@54.0 on@54.2 a@54.3 regular@54.4 basis.@54.6
+And@55.3 we're@55.7 actually@55.9 going@56.1 into@56.3 account@56.5 planning@56.7 mode@57.0 pretty@57.3 soon@57.5 here,@57.8 so.@58.1

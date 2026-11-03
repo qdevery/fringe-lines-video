@@ -21,3 +21,5 @@ __pycache__/
 *.pyc
 .DS_Store
 **/.render.json
+work/monologue/*/words-src.json
+work/monologue/*/cut.ffscript
