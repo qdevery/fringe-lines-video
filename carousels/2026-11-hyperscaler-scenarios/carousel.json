@@ -1,0 +1,101 @@
+{
+  "template": "v2",
+  "brand": "FringeLines",
+  "slides": [
+    {
+      "type": "cover",
+      "eyebrow": "FringeLines Consulting · Cloud scenarios",
+      "title": "Capacity is the forecast",
+      "sub": "AWS, Azure and Google Cloud revenue roughly doubles by 2028, if the power arrives on time.",
+      "tone": "green"
+    },
+    {
+      "type": "stat",
+      "eyebrow": "Cloud revenue · 2028 base case",
+      "value": "$873bn",
+      "text": "for AWS, Azure and Google Cloud, up from a *$440bn* run-rate today.",
+      "source": "SOURCE: FRINGELINES HYPERSCALER MODEL · RUN-RATE = Q3 2026 REVENUE × 4 ($184BN + $133BN + $123BN)"
+    },
+    {
+      "type": "bars",
+      "title": "Capex is up 6–13× since 2020",
+      "sub": "2027 consensus capex, $bn",
+      "prefix": "$",
+      "suffix": "bn",
+      "rows": [
+        {"label": "Alphabet · *$22bn* in 2020", "value": 285, "hi": true},
+        {"label": "Amazon · *$40bn* in 2020", "value": 257},
+        {"label": "Microsoft · *$21bn* in 2020", "value": 208}
+      ],
+      "source": "SOURCES: FILINGS, GUIDANCE, SELL-SIDE CONSENSUS (~OCT 2026) · CALENDAR-YEAR PARENT CAPEX, MICROSOFT INCL. FINANCE LEASES"
+    },
+    {
+      "type": "point",
+      "number": "27–41 GW",
+      "title": "Money is fast. *Power is slow.*",
+      "text": "That's the new AI capacity the world may need in 2027 alone. AWS plans to double its power by end-2027, Google adds ~7 GW in 2027, and Microsoft targets 38 GW by 2032.",
+      "source": "SOURCES: EXPONENTIAL VIEW (27–41 GW ESTIMATE); COMPANY GUIDANCE"
+    },
+    {
+      "type": "list",
+      "title": "Four scenarios",
+      "items": [
+        {"title": "Base · guided build", "text": "Capex at consensus, power on time."},
+        {"title": "Bull · unconstrained", "text": "More capex, faster power, higher price per GW."},
+        {"title": "Bear · power-gated", "text": "Same capex, shells two quarters late."},
+        {"title": "Bust · funding pulls back", "text": "Capex cut, prices fall 15% a year."}
+      ]
+    },
+    {
+      "type": "bars",
+      "title": "2028 revenue: $571bn to $1.1tr",
+      "sub": "CY2028 cloud revenue by scenario, $bn",
+      "prefix": "$",
+      "suffix": "bn",
+      "rows": [
+        {"label": "Bull", "value": 1115},
+        {"label": "Base", "value": 873, "hi": true},
+        {"label": "Bear", "value": 708},
+        {"label": "Bust", "value": 571}
+      ],
+      "source": "SOURCE: FRINGELINES HYPERSCALER MODEL · AWS + AZURE + GOOGLE CLOUD, CALENDAR YEARS"
+    },
+    {
+      "type": "point",
+      "number": "−15% to −24%",
+      "title": "Same capex. *Two quarters late.*",
+      "text": "In the power-gated Bear case, 36-month revenue falls 15% at AWS, 17% at Azure and 24% at Google Cloud versus Base. Timing matters more than the size of capex.",
+      "source": "SOURCE: FRINGELINES HYPERSCALER MODEL · BEAR VS BASE, Q4 2026 – Q3 2029"
+    },
+    {
+      "type": "bars",
+      "title": "AWS pays back only if *pricing holds*",
+      "sub": "AI revenue ÷ annual cost of AI capital, Q3 2029 · 100% = break-even",
+      "suffix": "%",
+      "rows": [
+        {"label": "Bull", "value": 157},
+        {"label": "Base", "value": 116},
+        {"label": "Bear · just short", "value": 97, "hi": true},
+        {"label": "Bust · fails", "value": 53}
+      ],
+      "source": "METHOD: EXPONENTIAL VIEW PAYBACK TEST (DEPRECIATION + OPEX + 15% RETURN) · FRINGELINES HYPERSCALER MODEL"
+    },
+    {
+      "type": "list",
+      "title": "Signals to watch",
+      "items": [
+        {"title": "Gigawatts energized per quarter"},
+        {"title": "GPU rental rates (H100 at $2.40/hr)"},
+        {"title": "Backlog converting to revenue"},
+        {"title": "How the AI labs get funded"}
+      ]
+    },
+    {
+      "type": "closing",
+      "title": "Follow FringeLines",
+      "sub": "A scenario model, not a point forecast. Not investment advice.",
+      "links": ["fringelines.co"],
+      "tone": "green"
+    }
+  ]
+}

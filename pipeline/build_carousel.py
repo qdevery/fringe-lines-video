@@ -33,8 +33,6 @@ def main():
         if "image" in s and not os.path.exists(os.path.join(folder, s["image"])):
             sys.exit(f"missing image: {s['image']}")
     v2 = spec.get("template") == "v2"   # FringeLines design kit v2 (CarouselV2.tsx); see the carousel skill
-    if square and v2:
-        sys.exit("--youtube is only supported for the v1 template so far")
     out = os.path.join(ROOT, "out/carousels", slug + ("-youtube" if square else ""))
     os.makedirs(out, exist_ok=True)
     batch = [{"id": "CarouselV2" if v2 else "Carousel", "still": 0 if v2 else 60, "out": os.path.join(out, f"{i + 1:02d}.png"),

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { AbsoluteFill, continueRender, delayRender } from "remotion";
+import { AbsoluteFill, continueRender, delayRender, useVideoConfig } from "remotion";
 // @ts-ignore - webpack asset imports
 import archivo from "../fonts/Archivo.ttf";
 // @ts-ignore
@@ -80,8 +80,12 @@ const Source: React.FC<{ text: string }> = ({ text }) => (
   </div>
 );
 
+// Square (1080x1080, YouTube posts): same layouts with tighter spacing and slightly smaller type.
+let SQ = false;
+const sq = <T,>(tall: T, square: T): T => (SQ ? square : tall);
+
 const frame = (bg: string, extra: React.CSSProperties = {}): React.CSSProperties => ({
-  background: bg, padding: "96px 90px 84px", display: "flex", flexDirection: "column", fontFamily: ARCH, ...extra,
+  background: bg, padding: sq("96px 90px 84px", "68px 80px 58px"), display: "flex", flexDirection: "column", fontFamily: ARCH, ...extra,
 });
 
 const fmt = (v: number, prefix = "", suffix = "", signed = false) =>
@@ -93,9 +97,9 @@ const Bars: React.FC<Extract<SlideV2, { type: "bars" }>> = ({ rows, prefix, suff
   const x = (v: number) => ((v - lo) / (hi - lo || 1)) * W;
   const z = x(0);
   let rank = 0;
-  const BH = rows.length > 4 ? 64 : 78;
+  const BH = sq(rows.length > 4 ? 64 : 78, rows.length > 4 ? 50 : 60);
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: rows.length > 4 ? 24 : 34 }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: sq(rows.length > 4 ? 24 : 34, rows.length > 4 ? 14 : 22) }}>
       {rows.map((r, i) => {
         const neg = r.value < 0;
         const fill = r.hi ? K.accent : neg ? K.blue : K.green[Math.min(rank++, K.green.length - 1)];
@@ -105,8 +109,8 @@ const Bars: React.FC<Extract<SlideV2, { type: "bars" }>> = ({ rows, prefix, suff
         const label = fmt(r.value, prefix, suffix, signed);
         const vStyle: React.CSSProperties = { fontFamily: MONO, fontWeight: 600, fontSize: 38, position: "absolute", top: 0, height: BH, display: "flex", alignItems: "center" };
         return (
-          <div key={i} style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-            <span style={{ fontSize: 38, color: K.ink2, lineHeight: 1.15 }}><Hl text={r.label} color={K.blueInk} /></span>
+          <div key={i} style={{ display: "flex", flexDirection: "column", gap: sq(14, 8) }}>
+            <span style={{ fontSize: sq(38, 32), color: K.ink2, lineHeight: 1.15 }}><Hl text={r.label} color={K.blueInk} /></span>
             <div style={{ position: "relative", width: W, height: BH, background: K.track }}>
               <div style={{ position: "absolute", left, width: w, top: 0, bottom: 0, background: fill }} />
               {lo < 0 && <div style={{ position: "absolute", left: z - 1.5, top: -8, bottom: -8, width: 3, background: K.ink }} />}
@@ -125,12 +129,13 @@ const Bars: React.FC<Extract<SlideV2, { type: "bars" }>> = ({ rows, prefix, suff
 
 export const CarouselV2: React.FC<CarouselV2Props> = ({ slide: s, index, total, brand }) => {
   useKitFonts();
+  SQ = useVideoConfig().height < 1200;
   const head = (title: string, sub?: string) => (
     <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 18 }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: sq(18, 6) }}>
         <span style={monoLabel(26, K.muted2)}>{brand}</span><Page i={index} n={total} color={K.faint} />
       </div>
-      <div style={{ fontSize: 76, fontWeight: 800, letterSpacing: "-0.03em", color: K.ink, lineHeight: 1.04, textWrap: "pretty" } as React.CSSProperties}>
+      <div style={{ fontSize: sq(76, 64), fontWeight: 800, letterSpacing: "-0.03em", color: K.ink, lineHeight: 1.04, textWrap: "pretty" } as React.CSSProperties}>
         <Hl text={title} color={K.blueInk} />
       </div>
       {sub && <div style={monoLabel(26, K.muted2)}>{sub}</div>}
@@ -140,14 +145,14 @@ export const CarouselV2: React.FC<CarouselV2Props> = ({ slide: s, index, total, 
   switch (s.type) {
     case "cover": {
       const t = DARK[s.tone ?? "green"];
-      const size = s.title.length > 34 ? 104 : 120;
+      const size = sq(s.title.length > 34 ? 104 : 120, s.title.length > 34 ? 92 : 108);
       return (
-        <AbsoluteFill style={frame(t.bg, { justifyContent: "space-between", padding: "110px 90px 96px" })}>
+        <AbsoluteFill style={frame(t.bg, { justifyContent: "space-between", padding: sq("110px 90px 96px", "76px 80px 64px") })}>
           <div style={monoLabel(30, t.eyebrow)}>{s.eyebrow}</div>
-          <div style={{ display: "flex", flexDirection: "column", gap: 44 }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: sq(44, 32) }}>
             <Rule />
             <div style={{ fontSize: size, fontWeight: 800, letterSpacing: "-0.035em", lineHeight: 0.98, color: "#fff", textWrap: "pretty" } as React.CSSProperties}>{s.title.replace(/\*/g, "")}</div>
-            {s.sub && <div style={{ fontSize: 44, lineHeight: 1.35, color: t.sub, textWrap: "pretty" } as React.CSSProperties}>{s.sub.replace(/\*/g, "")}</div>}
+            {s.sub && <div style={{ fontSize: sq(44, 40), lineHeight: 1.35, color: t.sub, textWrap: "pretty" } as React.CSSProperties}>{s.sub.replace(/\*/g, "")}</div>}
           </div>
           <div style={{ display: "flex", justifyContent: "space-between", ...monoLabel(26, t.eyebrow) }}>
             <span>{brand}</span><span>Swipe →</span>
@@ -157,15 +162,15 @@ export const CarouselV2: React.FC<CarouselV2Props> = ({ slide: s, index, total, 
     }
     case "stat": {
       const n = s.value.length;
-      const size = Math.min(380, Math.round(1500 / Math.max(n, 2.6)));
+      const size = Math.min(sq(380, 300), Math.round(1500 / Math.max(n, 2.6)));
       return (
         <AbsoluteFill style={frame(LIGHT, { gap: 0 })}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
             <span style={monoLabel(30, K.muted2)}>{s.eyebrow}</span><Page i={index} n={total} color={K.faint} />
           </div>
-          <div style={{ margin: "auto 0", display: "flex", flexDirection: "column", gap: 56 }}>
+          <div style={{ margin: "auto 0", display: "flex", flexDirection: "column", gap: sq(56, 40) }}>
             <div style={{ fontSize: size, fontWeight: 800, letterSpacing: "-0.05em", lineHeight: 0.82, color: K.accent, whiteSpace: "nowrap" }}>{s.value}</div>
-            <div style={{ fontSize: 56, lineHeight: 1.25, color: K.ink, letterSpacing: "-0.02em", textWrap: "pretty" } as React.CSSProperties}><Hl text={s.text} color={K.blueInk} /></div>
+            <div style={{ fontSize: sq(56, 48), lineHeight: 1.25, color: K.ink, letterSpacing: "-0.02em", textWrap: "pretty" } as React.CSSProperties}><Hl text={s.text} color={K.blueInk} /></div>
           </div>
           <Source text={s.source} />
         </AbsoluteFill>
@@ -173,7 +178,7 @@ export const CarouselV2: React.FC<CarouselV2Props> = ({ slide: s, index, total, 
     }
     case "bars":
       return (
-        <AbsoluteFill style={frame(LIGHT, { gap: s.rows.length > 4 ? 48 : 64 })}>
+        <AbsoluteFill style={frame(LIGHT, { gap: sq(s.rows.length > 4 ? 48 : 64, s.rows.length > 4 ? 30 : 40) })}>
           {head(s.title, s.sub)}
           <Bars {...s} />
           <Source text={s.source} />
@@ -181,7 +186,7 @@ export const CarouselV2: React.FC<CarouselV2Props> = ({ slide: s, index, total, 
       );
     case "quote": {
       const q = QUOTE[s.tone ?? "green"];
-      const size = s.text.length > 90 ? 76 : 88;
+      const size = sq(s.text.length > 90 ? 76 : 88, s.text.length > 90 ? 66 : 78);
       return (
         <AbsoluteFill style={frame(q.bg, { justifyContent: "center", gap: 60 })}>
           <Rule />
@@ -192,19 +197,19 @@ export const CarouselV2: React.FC<CarouselV2Props> = ({ slide: s, index, total, 
     }
     case "list":
       return (
-        <AbsoluteFill style={frame(NIGHT, { gap: 70 })}>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: -40 }}>
+        <AbsoluteFill style={frame(NIGHT, { gap: sq(70, 44) })}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: sq(-40, -24) }}>
             <span style={monoLabel(26, "#8b9088")}>{brand}</span><Page i={index} n={total} color="#8b9088" />
           </div>
-          <div style={{ fontSize: 80, fontWeight: 800, letterSpacing: "-0.03em", color: "#fff", lineHeight: 1.02, textWrap: "pretty" } as React.CSSProperties}>{s.title.replace(/\*/g, "")}</div>
-          <div style={{ display: "flex", flexDirection: "column", gap: 52, margin: "auto 0" }}>
+          <div style={{ fontSize: sq(80, 68), fontWeight: 800, letterSpacing: "-0.03em", color: "#fff", lineHeight: 1.02, textWrap: "pretty" } as React.CSSProperties}>{s.title.replace(/\*/g, "")}</div>
+          <div style={{ display: "flex", flexDirection: "column", gap: sq(52, s.items.length > 3 ? 26 : 36), margin: "auto 0" }}>
             {s.items.map((it, i) => {
               const last = i === s.items.length - 1;
               return (
-                <div key={i} style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-                  <span style={{ fontFamily: MONO, fontSize: 30, color: last ? K.accent : "#7fb99b" }}>{String(i + 1).padStart(2, "0")}</span>
-                  <span style={{ fontSize: s.items.some((x) => x.text) ? 52 : 60, fontWeight: 600, letterSpacing: "-0.02em", color: last ? K.accent : "#fff", lineHeight: 1.18, textWrap: "pretty" } as React.CSSProperties}>{it.title.replace(/\*/g, "")}</span>
-                  {it.text && <span style={{ fontSize: 34, lineHeight: 1.4, color: "#b9c0b3", textWrap: "pretty" } as React.CSSProperties}>{it.text.replace(/\*/g, "")}</span>}
+                <div key={i} style={{ display: "flex", flexDirection: "column", gap: sq(12, 6) }}>
+                  <span style={{ fontFamily: MONO, fontSize: sq(30, 26), color: last ? K.accent : "#7fb99b" }}>{String(i + 1).padStart(2, "0")}</span>
+                  <span style={{ fontSize: s.items.some((x) => x.text) ? sq(52, 42) : sq(60, 50), fontWeight: 600, letterSpacing: "-0.02em", color: last ? K.accent : "#fff", lineHeight: 1.18, textWrap: "pretty" } as React.CSSProperties}>{it.title.replace(/\*/g, "")}</span>
+                  {it.text && <span style={{ fontSize: sq(34, 30), lineHeight: 1.4, color: "#b9c0b3", textWrap: "pretty" } as React.CSSProperties}>{it.text.replace(/\*/g, "")}</span>}
                 </div>
               );
             })}
@@ -217,10 +222,10 @@ export const CarouselV2: React.FC<CarouselV2Props> = ({ slide: s, index, total, 
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
             <span style={monoLabel(26, K.muted2)}>{brand}</span><Page i={index} n={total} color={K.faint} />
           </div>
-          <div style={{ margin: "auto 0", display: "flex", flexDirection: "column", gap: 40 }}>
+          <div style={{ margin: "auto 0", display: "flex", flexDirection: "column", gap: sq(40, 28) }}>
             <span style={{ fontFamily: MONO, fontWeight: 600, fontSize: 44, color: K.accent }}>{s.number}</span>
-            <div style={{ fontSize: 88, fontWeight: 800, letterSpacing: "-0.03em", color: K.ink, lineHeight: 1.02, textWrap: "pretty" } as React.CSSProperties}><Hl text={s.title} color={K.blueInk} /></div>
-            <div style={{ fontSize: 44, lineHeight: 1.4, color: K.muted, textWrap: "pretty" } as React.CSSProperties}><Hl text={s.text} color={K.blueInk} /></div>
+            <div style={{ fontSize: sq(88, 74), fontWeight: 800, letterSpacing: "-0.03em", color: K.ink, lineHeight: 1.02, textWrap: "pretty" } as React.CSSProperties}><Hl text={s.title} color={K.blueInk} /></div>
+            <div style={{ fontSize: sq(44, 38), lineHeight: 1.4, color: K.muted, textWrap: "pretty" } as React.CSSProperties}><Hl text={s.text} color={K.blueInk} /></div>
           </div>
           {s.source ? <Source text={s.source} /> : <div style={{ height: 1 }} />}
         </AbsoluteFill>
