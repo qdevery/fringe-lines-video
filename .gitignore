@@ -23,3 +23,11 @@ __pycache__/
 **/.render.json
 work/monologue/*/words-src.json
 work/monologue/*/cut.ffscript
+work/walkthrough/*/words-src.json
+work/walkthrough/*/*.ffscript
+work/walkthrough/*/frames/
+work/walkthrough/*/stills/
+work/walkthrough/*/stills.json
+work/monologue/*/cut-screen.ffscript
+assets/logos/.sheet/
+work/**/logos/

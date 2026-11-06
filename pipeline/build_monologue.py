@@ -24,6 +24,7 @@ ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 from build_short import plan, norm, run  # noqa: E402  filler / stutter / pause planner shared with the shorts
 from style_short import sfx_whoosh, sfx_pop, SR  # noqa: E402
+import logos  # noqa: E402  company logo library (assets/logos)
 
 FPS = 30
 PUNCH = [1.0, 1.12]
@@ -38,8 +39,9 @@ def wdir(slug):
 
 # ---------------------------------------------------------------- cut
 
-def cmd_cut(a):
-    d = wdir(a.slug); os.makedirs(d, exist_ok=True)
+def cmd_cut(a, d=None):
+    """Also used by build_walkthrough.py: pass d (work dir) and a.screen (a screen track in sync with a.src) to cut both."""
+    d = d or wdir(a.slug); os.makedirs(d, exist_ok=True)
     src = os.path.abspath(a.src)
     wj = os.path.join(d, "words-src.json")
     if not os.path.exists(wj) or a.retranscribe:
@@ -52,17 +54,35 @@ def cmd_cut(a):
         Wr, keep = plan([dict(w) for w in words], ra, rb)
         W += Wr; pieces += keep
     fixes = {norm(k): v for k, v in (r.split("=>", 1) for r in a.replace)}
+    # snap every piece to the 30 fps frame grid so audio and video stay in sync however many cuts there are
+    pieces = [(round(pa * FPS) / FPS, round(pb * FPS) / FPS) for pa, pb in pieces]
+    pieces = [(pa, pb) for pa, pb in pieces if pb > pa]
 
     # splice video+audio pieces, normalise to 1920x1080 / 30 fps / -14 LUFS
-    fc, labels = [], []
+    n = len(pieces)
+    fc, labels = [f"[0:v]fps={FPS},split={n}" + "".join(f"[s{i}]" for i in range(n))], []
     for i, (pa, pb) in enumerate(pieces):
-        fc.append(f"[0:v]trim={pa:.3f}:{pb:.3f},setpts=PTS-STARTPTS,scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,fps={FPS}[v{i}]")
-        fc.append(f"[0:a]atrim={pa:.3f}:{pb:.3f},asetpts=PTS-STARTPTS,afade=t=in:d=0.012,afade=t=out:st={max(0, pb - pa - 0.012):.3f}:d=0.012[a{i}]")
+        fa, fb = round(pa * FPS), round(pb * FPS)
+        fc.append(f"[s{i}]trim=start_frame={fa}:end_frame={fb},setpts=PTS-STARTPTS,scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080[v{i}]")
+        fc.append(f"[0:a]atrim={pa:.6f}:{pb:.6f},asetpts=PTS-STARTPTS,afade=t=in:d=0.012,afade=t=out:st={max(0, pb - pa - 0.012):.3f}:d=0.012[a{i}]")
         labels.append(f"[v{i}][a{i}]")
-    fc.append("".join(labels) + f"concat=n={len(pieces)}:v=1:a=1[v][ac];[ac]loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000[a]")
+    fc.append("".join(labels) + f"concat=n={n}:v=1:a=1[v][ac];[ac]loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000[a]")
     script = os.path.join(d, "cut.ffscript"); open(script, "w").write(";".join(fc))
     run(["ffmpeg", "-y", "-v", "error", "-i", src, "-/filter_complex", script, "-map", "[v]", "-map", "[a]",
          "-c:v", "libx264", "-crf", "16", "-preset", "veryfast", "-c:a", "aac", "-b:a", "192k", os.path.join(d, "clip.mp4")])
+    screen = None
+    if getattr(a, "screen", None):
+        # the same frame-exact pieces from the screen track (kept at its own aspect, max 1920 wide)
+        sw, sh = map(int, run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height", "-of", "csv=p=0", a.screen]).strip().split(","))
+        ow = min(1920, sw) // 2 * 2; oh = round(ow * sh / sw / 2) * 2
+        sfc = [f"[0:v]fps={FPS},scale={ow}:{oh},setsar=1,tpad=stop_mode=clone:stop_duration={dur + 5:.0f},split={n}" + "".join(f"[s{i}]" for i in range(n))]
+        for i, (pa, pb) in enumerate(pieces):
+            sfc.append(f"[s{i}]trim=start_frame={round(pa * FPS)}:end_frame={round(pb * FPS)},setpts=PTS-STARTPTS[v{i}]")
+        sfc.append("".join(f"[v{i}]" for i in range(n)) + f"concat=n={n}:v=1:a=0[v]")
+        sscript = os.path.join(d, "cut-screen.ffscript"); open(sscript, "w").write(";".join(sfc))
+        run(["ffmpeg", "-y", "-v", "error", "-i", os.path.abspath(a.screen), "-/filter_complex", sscript, "-map", "[v]", "-an",
+             "-c:v", "libx264", "-crf", "18", "-preset", "veryfast", "-g", "30", os.path.join(d, "screen.mp4")])
+        screen = {"screen": "screen.mp4", "screenW": ow, "screenH": oh}
 
     def to_out(t):
         acc = 0.0
@@ -86,7 +106,9 @@ def cmd_cut(a):
             shots.append({"startMs": round(acc * 1000), "endMs": 0, "scale": PUNCH[len(shots) % 2]})
         acc += pb - pa
         shots[-1]["endMs"] = round(acc * 1000) + 1
-    props = {"src": "clip.mp4", "srcW": 1920, "srcH": 1080, "durationInFrames": int(total * FPS), "words": cap, "shots": shots}
+    props = {"src": "clip.mp4", "srcW": 1920, "srcH": 1080, "durationInFrames": int(round(total * FPS)), "words": cap, "shots": shots, **(screen or {})}
+    if screen and getattr(a, "screen_spans", None):  # where the screen track has real content, on the cut clock
+        props["screenSpans"] = [[round(to_out(s0), 2), round(to_out(s1), 2)] for s0, s1 in a.screen_spans if to_out(s1) - to_out(s0) > 0.5]
     json.dump(props, open(os.path.join(d, "props.json"), "w"), indent=1)
     # transcript with times, for writing beats.json
     lines, cur = [], []
@@ -180,7 +202,7 @@ def cmd_render(a):
             src = os.path.join(d, b["src"])
             if not os.path.exists(src): sys.exit(f"media not found: {src} (put b-roll/screenshots in work/monologue/{a.slug}/)")
             out["video"] = b.get("video", b["src"].lower().endswith((".mp4", ".mov", ".m4v")))
-        beats.append(out)
+        beats.append(logos.attach(out, d))
     end_ms = max([base_ms] + [b["endMs"] for b in beats])
     total = int(round(end_ms / 1000 * FPS)) + 10
 

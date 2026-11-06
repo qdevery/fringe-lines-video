@@ -1,0 +1,26 @@
+You@0.5 know,@0.9 like,@1.2 we@1.4 haven't@1.6 consistently@1.9 been@2.3 hitting@2.6 all@2.8 of@3.1 our@3.2 meeting@3.3 recordings,@3.4 and@3.9
+then@4.3 you@4.4 got@4.5 to@4.6 copy@4.7 and@5.0 paste@5.1 them@5.3 over.@5.5
+And@6.2 was@6.5 like,@6.6 man,@6.8 what@7.0 if@7.1 I@7.3 just@7.4 set@7.5 up@7.7 this@7.8 loop,@8.0 like,@8.4 I@8.7
+want@8.9 it@9.0 to@9.1 run@9.2 every@9.4 morning,@9.6 and@10.2 it@10.5 just@10.9 scrapes@11.0 all@11.4 my@11.6 things.@11.7
+And,@12.3 you@12.5 know,@12.6 I@12.9 don't@13.4 feel@13.5 like@13.6 it's@13.8 rocket@13.9 science,@14.2 but@14.6 I'm@14.7 talking@15.0 to@15.2
+some@15.3 of@15.4 my@15.5 peers,@15.6 they're@16.0 not@16.1 doing@16.2 this.@16.4
+So@16.7 let@16.9 me@17.7 see@17.8 if@17.9 I@18.0 can@18.1 pull@18.2 up@18.4 a@18.5 slide@18.6 real@18.9 quick.@19.0
+so@19.7 here,@21.3 here's@21.5 the@21.8 basic@21.8 architecture,@22.1 right?@22.7
+Nothing@22.9 overly@23.1 complex,@23.5 but@24.1 you@24.2 got@24.2 Outlook.@24.4
+So@25.0 you@25.1 got@25.1 your@25.2 in,@25.4 inbound,@25.8 inbound,@26.1 and@26.8 your@27.0 sent.@27.1
+You've@27.9 got@28.2 your@28.3 Outlook@28.5 to@28.7 do,@28.9 which@29.4 can@29.5 be@29.7 like@29.9 yours@30.0 or@30.4 curated@30.6 Slack@31.1
+Obviously@32.0 this@32.2 could@32.7 be@32.8 any@32.9 sort@33.1 of@33.3 comms@33.4 channel.@33.9
+Maybe@34.6 this@34.8 could@34.9 be@35.0 Google@35.1 workspace@35.3 for@35.6 email,@35.9 Asana@36.8 Notion@37.4 for@37.9 project@38.1 management.@38.4
+SharePoint@39.3 is@39.8 kind@39.9 of@40.1 our@40.1 team@40.3 collaboration@40.5 sites.@41.0
+And@41.6 then@42.1 it's@42.2 very@42.4 similar@42.6 to@43.0 Codex,@43.4 Claude@44.6 Code,@44.8 Claude@45.4 Desktop,@45.6 you've@46.2 got@46.4 connectors.@46.5
+So@47.3 we've@47.7 got@47.9 all@48.0 of@48.2 our@48.3 approved@48.4 enterprise@48.9 connectors.@49.3
+we@50.1 can,@50.2 this@50.5 can@51.2 reach@51.7 into@51.9 all@52.2 of@52.4 these@52.5 areas,@52.7 these@53.7 sources.@53.8
+And@54.6 then@55.1 I@55.2 have@55.3 it@55.4 scheduled.@55.5
+run@56.0 it@56.2 every@56.3 8@56.6 a@57.5 .m.@57.7
+and@57.9 i@58.1 don't@58.2 have@58.4 to@58.5 have@58.6 my@58.7 laptop@58.8 open@59.1 and@59.5 then@59.9 it@60.0 uses@60.1 our@60.4
+quote@60.8 -unquote@60.9 smart@61.1 model@61.5 not@61.8 our@62.6 balance@62.7 model@63.0 and@63.3 you@64.7 know@65.1 i've@65.2 got@65.3 the@65.5
+prompt@65.6 playbook@65.8 and@66.2 so@66.4 the@66.5 outputs@66.6 here@67.1 is@67.3 essentially@67.6 it's@68.3 flagging@68.6 anything@69.1 i@69.4 may@69.6
+have@69.7 missed@69.8 and@70.1 so@70.5 you@70.9 know@71.4 it's@71.5 managing@71.8 my@72.2 to@72.4 -dos@72.6 it's@72.9 creating@73.3 the@73.6
+to@73.8 -dos@74.0 it's@74.3 syncing@74.6 those@74.9 to@75.2 Asana@75.5 and@76.1 then@76.7 it's@76.8 generating@77.0 a@77.4 feed@77.6 brief@77.9
+that@78.2 it@78.4 sends@78.5 me@78.7 every@78.9 morning@79.3 and@79.6 then@80.2 i@80.3 can@80.4 reply@80.6 back@80.9 to@81.2 that@81.4
+at@81.6 the@81.7 end@81.8 of@81.9 the@82.1 day@82.2

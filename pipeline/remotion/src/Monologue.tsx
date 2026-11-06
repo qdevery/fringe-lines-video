@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { AbsoluteFill, OffthreadVideo, Img, staticFile, useCurrentFrame, useVideoConfig, interpolate, Easing, spring,
+import { AbsoluteFill, OffthreadVideo, Img, Sequence, staticFile, useCurrentFrame, useVideoConfig, interpolate, Easing, spring,
          continueRender, delayRender } from "remotion";
 import type { Shot } from "./types";
 import { faceAt, frameVideo, type Face } from "./ShortV2";
@@ -20,27 +20,27 @@ import monoSB from "../fonts/IBMPlexMono-SemiBold.ttf";
 // The speaker is full-frame most of the time; "paper" beats shrink them into a portrait picture-in-picture while a
 // graphic builds on a warm paper canvas. Text is revealed word by word in sync with the speech (times from Python).
 
-const SERIF = "FLMSerif", SANS = "FLMSans", MONO = "FLMMono";
+export const SERIF = "FLMSerif", SANS = "FLMSans", MONO = "FLMMono";
 export const C = {
   paper: "#F7F7F5", wash: "#EEF2EC", ink: "#14170F", body: "#3D423A", muted: "#5C6159", label: "#6B7067", rule: "#E3E5DF",
   green: ["#1A5A41", "#3D8A63", "#7FB99B", "#A6CDB6", "#C5DDCF", "#E8F0EA"], blue: ["#163F57", "#1A4F6B", "#4D88A8", "#8FBBD6", "#E0EDF3"],
   accent: "#D4622A", accentDark: "#F0863F",
 };
-const TONE = {
+export const TONE = {
   green: { bg: "linear-gradient(160deg,#2c8360 0%,#1d6247 55%,#164a37 100%)", soft: "#E8F0EA", ink: "#1A5A41", sub: "#dbe9e0" },
   blue: { bg: "linear-gradient(160deg,#2e7a9e 0%,#1f5b78 55%,#163f57 100%)", soft: "#E0EDF3", ink: "#163F57", sub: "#d6e6ee" },
   orange: { bg: "linear-gradient(160deg,#d97b3d 0%,#b4501c 55%,#8a3a12 100%)", soft: "#F7E6D8", ink: "#8a3a12", sub: "#FCE0CE" },
 };
-type Tone = keyof typeof TONE;
+export type Tone = keyof typeof TONE;
 
 // A token is one word, pre-split in Python: s = "n" normal, "i" italic highlight (*...*), "a" accent number ([...]).
 export type Tok = { t: string; s: "n" | "i" | "a"; ms: number };
-type Item = { text: string; ms: number; tone?: Tone; tokens?: Tok[] };
+type Item = { text: string; ms: number; tone?: Tone; tokens?: Tok[]; logo?: string; bleed?: boolean };
 export type Beat =
   | { type: "title"; startMs: number; endMs: number; eyebrow?: string; tokens: Tok[] }
   | { type: "text"; startMs: number; endMs: number; eyebrow?: string; tokens: Tok[]; align?: "left" | "center" }
   | { type: "overlay"; startMs: number; endMs: number; tokens: Tok[] }
-  | { type: "callout"; startMs: number; endMs: number; label?: string; tokens: Tok[]; tone?: Tone; side?: "left" | "right" }
+  | { type: "callout"; startMs: number; endMs: number; label?: string; tokens: Tok[]; tone?: Tone; side?: "left" | "right"; logo?: string; bleed?: boolean }
   | { type: "name"; startMs: number; endMs: number; tokens: Tok[]; role?: string }
   | { type: "chips"; startMs: number; endMs: number; items: Item[]; side?: "left" | "right"; tone?: Tone }
   | { type: "cta"; startMs: number; endMs: number; tokens: Tok[]; sub?: string }
@@ -65,7 +65,7 @@ const PIP = { x: 1420, y: 230, w: 400, h: 560, r: 18, b: 8 };
 const MORPH = 14;   // frames for full <-> picture-in-picture
 const EXIT = 9;     // frames for blur-out exits
 
-function useKitFonts() {
+export function useKitFonts() {
   const [h] = useState(() => delayRender("monologue-fonts"));
   useEffect(() => {
     const faces = [
@@ -77,15 +77,15 @@ function useKitFonts() {
   }, [h]);
 }
 
-const ease = Easing.bezier(0.22, 1, 0.36, 1);
-const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
-const pop = (f: number, fps: number, damping = 13) => spring({ frame: f, fps, config: { damping, stiffness: 170, mass: 0.6 } });
+export const ease = Easing.bezier(0.22, 1, 0.36, 1);
+export const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
+export const pop = (f: number, fps: number, damping = 13) => spring({ frame: f, fps, config: { damping, stiffness: 170, mass: 0.6 } });
 
 // Context handed to every beat: ms now, frames since start, and the exit progress (0 -> 1 over the last EXIT frames).
-type Ctx = { ms: number; f: number; out: number; fps: number; toF: (m: number) => number };
+export type Ctx = { ms: number; f: number; out: number; fps: number; toF: (m: number) => number };
 
 // Word-by-word reveal: each word starts faint and soft, then sharpens to full ink when it is spoken.
-const Words: React.FC<{ tokens: Tok[]; ctx: Ctx; dark?: boolean; gap?: number }> = ({ tokens, ctx, dark, gap = 0.26 }) => (
+export const Words: React.FC<{ tokens: Tok[]; ctx: Ctx; dark?: boolean; gap?: number }> = ({ tokens, ctx, dark, gap = 0.26 }) => (
   <>
     {tokens.map((w, i) => {
       const wf = ctx.f - ctx.toF(w.ms);
@@ -100,21 +100,21 @@ const Words: React.FC<{ tokens: Tok[]; ctx: Ctx; dark?: boolean; gap?: number }>
     })}
   </>
 );
-const relTokens = (tokens: Tok[], startMs: number) => tokens.map((t) => ({ ...t, ms: t.ms - startMs }));
+export const relTokens = (tokens: Tok[], startMs: number) => tokens.map((t) => ({ ...t, ms: t.ms - startMs }));
 
-const Rich: React.FC<{ text: string; dark?: boolean }> = ({ text, dark }) => (
+export const Rich: React.FC<{ text: string; dark?: boolean }> = ({ text, dark }) => (
   <>{text.split(/(\*[^*]+\*)/).map((p, i) => p.startsWith("*")
     ? <span key={i} style={{ fontStyle: "italic", color: dark ? "white" : C.blue[1] }}>{p.slice(1, -1)}</span> : <span key={i}>{p}</span>)}</>
 );
 
-const exitStyle = (out: number): React.CSSProperties => ({ opacity: 1 - out, filter: out > 0 ? `blur(${out * 14}px)` : undefined });
+export const exitStyle = (out: number): React.CSSProperties => ({ opacity: 1 - out, filter: out > 0 ? `blur(${out * 14}px)` : undefined });
 
-const Eyebrow: React.FC<{ text?: string; color?: string; style?: React.CSSProperties }> = ({ text, color = C.label, style }) =>
+export const Eyebrow: React.FC<{ text?: string; color?: string; style?: React.CSSProperties }> = ({ text, color = C.label, style }) =>
   text ? <div style={{ fontFamily: MONO, fontWeight: 600, fontSize: 26, letterSpacing: "0.14em", textTransform: "uppercase", color, ...style }}>{text}</div> : null;
 
 // ---------- overlay beats (speaker stays full-frame) ----------
 
-const Title: React.FC<{ b: Extract<Beat, { type: "title" }>; c: Ctx }> = ({ b, c }) => (
+export const Title: React.FC<{ b: Extract<Beat, { type: "title" }>; c: Ctx }> = ({ b, c }) => (
   <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", ...exitStyle(c.out) }}>
     <AbsoluteFill style={{ background: "radial-gradient(ellipse at 50% 55%, rgba(10,14,8,.62) 0%, rgba(10,14,8,.35) 60%, rgba(10,14,8,.15) 100%)",
                            opacity: interpolate(c.f, [0, 10], [0, 1], clamp) }} />
@@ -137,6 +137,15 @@ const Overlay: React.FC<{ b: Extract<Beat, { type: "overlay" }>; c: Ctx }> = ({ 
   </AbsoluteFill>
 );
 
+// A company logo in a round white tile (files come from assets/logos via pipeline/logos.py). bleed = an opaque square
+// app icon that fills the circle; otherwise a transparent mark sits inside with padding.
+export const LogoMark: React.FC<{ src: string; bleed?: boolean; size: number; ring?: boolean }> = ({ src, bleed, size, ring = true }) => (
+  <div style={{ width: size, height: size, borderRadius: size / 2, background: "white", border: ring ? `2px solid ${C.rule}` : "none", overflow: "hidden",
+                display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, boxSizing: "border-box" }}>
+    <Img src={staticFile(src)} style={bleed ? { width: "100%", height: "100%", objectFit: "cover" } : { width: size * 0.62, height: size * 0.62, objectFit: "contain" }} />
+  </div>
+);
+
 const Callout: React.FC<{ b: Extract<Beat, { type: "callout" }>; c: Ctx }> = ({ b, c }) => {
   const s = pop(c.f, c.fps, 15);
   const t = TONE[b.tone ?? "green"];
@@ -145,8 +154,11 @@ const Callout: React.FC<{ b: Extract<Beat, { type: "callout" }>; c: Ctx }> = ({ 
     <div style={{ position: "absolute", top: 80, [right ? "right" : "left"]: 80, width: 640, padding: "34px 40px 40px", borderRadius: 18, background: t.bg,
                   transformOrigin: right ? "100% 0" : "0 0", transform: `translateY(${(1 - s) * -30}px) scale(${0.92 + 0.08 * s})`, ...exitStyle(c.out),
                   opacity: Math.min(1, s * 1.6) * (1 - c.out) } as React.CSSProperties}>
-      {b.label && <span style={{ display: "inline-block", fontFamily: MONO, fontWeight: 600, fontSize: 22, letterSpacing: "0.12em", textTransform: "uppercase",
-                                  color: t.ink, background: "white", borderRadius: 8, padding: "7px 14px", marginBottom: 22 }}>{b.label}</span>}
+      {(b.label || b.logo) && <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 22 }}>
+        {b.logo && <LogoMark src={b.logo} bleed={b.bleed} size={64} ring={false} />}
+        {b.label && <span style={{ display: "inline-block", fontFamily: MONO, fontWeight: 600, fontSize: 22, letterSpacing: "0.12em", textTransform: "uppercase",
+                                    color: t.ink, background: "white", borderRadius: 8, padding: "7px 14px" }}>{b.label}</span>}
+      </div>}
       <div style={{ fontFamily: SERIF, fontSize: 60, lineHeight: 1.06, color: "white" }}>
         <Words tokens={relTokens(b.tokens, b.startMs)} ctx={c} dark gap={0.24} />
       </div>
@@ -154,7 +166,7 @@ const Callout: React.FC<{ b: Extract<Beat, { type: "callout" }>; c: Ctx }> = ({ 
   );
 };
 
-const Name: React.FC<{ b: Extract<Beat, { type: "name" }>; c: Ctx }> = ({ b, c }) => {
+export const Name: React.FC<{ b: Extract<Beat, { type: "name" }>; c: Ctx }> = ({ b, c }) => {
   const k = interpolate(c.f, [0, 12], [0, 1], { ...clamp, easing: ease });
   return (
     <AbsoluteFill style={exitStyle(c.out)}>
@@ -180,7 +192,9 @@ const Chips: React.FC<{ b: Extract<Beat, { type: "chips" }>; c: Ctx }> = ({ b, c
         if (s <= 0.001) return null;
         return (
           <div key={i} style={{ fontFamily: SANS, fontWeight: 600, fontSize: 46, color: "white", background: TONE[it.tone ?? (b.tone ?? "orange")].bg ?? t.bg,
-                                padding: "16px 30px", borderRadius: 14, transform: `scale(${s}) rotate(${(i % 2 ? 2 : -2) * s}deg)`, transformOrigin: left ? "0 50%" : "100% 50%" }}>
+                                padding: it.logo ? "12px 30px 12px 12px" : "16px 30px", borderRadius: 14, transform: `scale(${s}) rotate(${(i % 2 ? 2 : -2) * s}deg)`,
+                                transformOrigin: left ? "0 50%" : "100% 50%", display: "flex", alignItems: "center", gap: 18 }}>
+            {it.logo && <LogoMark src={it.logo} bleed={it.bleed} size={60} ring={false} />}
             {it.text}
           </div>
         );
@@ -189,7 +203,7 @@ const Chips: React.FC<{ b: Extract<Beat, { type: "chips" }>; c: Ctx }> = ({ b, c
   );
 };
 
-const Cta: React.FC<{ b: Extract<Beat, { type: "cta" }>; c: Ctx }> = ({ b, c }) => {
+export const Cta: React.FC<{ b: Extract<Beat, { type: "cta" }>; c: Ctx }> = ({ b, c }) => {
   const s = pop(c.f, c.fps, 14);
   return (
     <div style={{ position: "absolute", left: 0, right: 0, bottom: 70, display: "flex", flexDirection: "column", alignItems: "center", ...exitStyle(c.out),
@@ -361,7 +375,7 @@ const Media: React.FC<{ b: Extract<Beat, { type: "media" }>; c: Ctx }> = ({ b, c
   const s = pop(c.f, c.fps, 16);
   const kb = interpolate(c.f, [0, c.toF(b.endMs - b.startMs)], [1, 1.05], clamp);
   const el = b.video
-    ? <OffthreadVideo src={staticFile(b.src)} startFrom={c.toF((b.from ?? 0) * 1000)} muted style={{ width: "100%", height: "100%", objectFit: "cover", transform: `scale(${kb})` }} />
+    ? <Sequence from={c.toF(b.startMs)} layout="none"><OffthreadVideo src={staticFile(b.src)} startFrom={c.toF((b.from ?? 0) * 1000)} muted style={{ width: "100%", height: "100%", objectFit: "cover", transform: `scale(${kb})` }} /></Sequence>
     : <Img src={staticFile(b.src)} style={{ width: "100%", height: "100%", objectFit: "cover", transform: `scale(${kb})` }} />;
   if (b.full) return <AbsoluteFill style={{ ...exitStyle(c.out), opacity: Math.min(1, s * 2) * (1 - c.out) }}>{el}</AbsoluteFill>;
   return (
@@ -378,7 +392,7 @@ const Media: React.FC<{ b: Extract<Beat, { type: "media" }>; c: Ctx }> = ({ b, c
   );
 };
 
-const End: React.FC<{ b: Extract<Beat, { type: "end" }>; c: Ctx; brand: string }> = ({ b, c, brand }) => {
+export const End: React.FC<{ b: Extract<Beat, { type: "end" }>; c: Ctx; brand: string }> = ({ b, c, brand }) => {
   const t = TONE[b.tone ?? "green"];
   const k = interpolate(c.f, [0, 12], [0, 1], { ...clamp, easing: ease });
   return (

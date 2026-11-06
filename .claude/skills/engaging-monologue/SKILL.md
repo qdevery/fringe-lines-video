@@ -106,8 +106,8 @@ Read `transcript.txt` and plan the beats against it.
 | `title` | `text, eyebrow?` | Cold-open title over a dimmed frame (first 2–3 s) |
 | `name` | `text, role?` | Lower third the first time a person appears |
 | `overlay` | `text` | One spoken sentence in white serif at the bottom: the line you want remembered |
-| `callout` | `text, label?, tone?, side?` | Coloured card top-left (or right) with a mono label pill: "Mistake #1", "The setup", "Rule" |
-| `chips` | `items[{text, at, tone?}], side?, tone?` | 2–3 short tags popping in beside the head: inner voice, names, options |
+| `callout` | `text, label?, logo?, tone?, side?` | Coloured card top-left (or right) with a mono label pill: "Mistake #1", "The setup", "Rule" |
+| `chips` | `items[{text, at, tone?, logo?}], side?, tone?` | 2–3 short tags popping in beside the head: inner voice, names, options |
 | `cta` | `text, sub?` | Bottom pill: the newsletter, the episode or the offer. Once, usually mid-video |
 | `bw` | (none) | Black-and-white emphasis on the speaker; pair it with an `overlay` |
 | `media` + `"full": true` | `src, video?, from?` | Full-bleed b-roll with the speaker in the PiP |
@@ -126,6 +126,22 @@ Read `transcript.txt` and plan the beats against it.
 
 Paper beats less than 0.7 s apart stay in the PiP layout, so the speaker doesn't bounce.
 
+### Company logos (camera overlays)
+When the speaker names a company or tool while on camera, show its logo. Logos go on the **talking-head overlays and paper diagrams only, never on the screen recording**: the screen already shows the real product.
+
+1. List the companies said on camera from `transcript.txt` (tools, vendors, data sources, platforms).
+2. Get each into the shared library (`assets/logos/`, reused across videos), once:
+   ```
+   ~/.shorts-skill/bin/python pipeline/logos.py list
+   ~/.shorts-skill/bin/python pipeline/logos.py fetch apollo --domain apollo.io --name Apollo [--alias "apollo.io"]
+   ~/.shorts-skill/bin/python pipeline/logos.py scan --transcript work/monologue/<slug>/transcript.txt   # library logos said, with times
+   ~/.shorts-skill/bin/python pipeline/logos.py sheet                                                  # QA every logo in its tile
+   ```
+   `fetch` takes the icon the company's own site declares: its biggest PNG of at least 128 px, else Google's favicon service, else an SVG. Add `--alias` for how the transcript spells it (`--alias hayreach`). When a site only has a small favicon (Lemlist) or blocks the request (LinkedIn), download the mark from their brand or press page and pass `--file <path or url>`. If you can't get one, leave `logo` off: the logo row shows the company's initial, and pills keep their icon.
+3. Reference logos by library key, name or alias: `"logo": "apollo"`. The build copies them into the work folder.
+
+In `chips` a logo sits at the start of the chip ("[logo] Clay"); in `callout` it sits beside the label pill.
+
 ### Pacing rules (from the reference)
 - Open with a `title` and a `name`, both inside the first 5 s.
 - **Paper beats take 35–45% of the runtime.** Never go more than ~20 s without a visual change, and never stay on paper longer than ~15 s.
@@ -142,6 +158,7 @@ Paper beats less than 0.7 s apart stay in the PiP layout, so the speaker doesn't
 ### Honesty
 - Numbers on screen must be what was said, or come from a named source in `source`.
 - Screenshots of other people's content need credit in `meta`.
+- Logos only for companies the speaker names, as labels, never implying an endorsement or partnership.
 - Don't put words in the speaker's mouth: an `overlay` or `text` beat that isn't a quote should read as a label, not as speech.
 
 ## 4. Render
@@ -160,6 +177,7 @@ Check each of these:
 - **Text:** no text runs under the PiP (the paper area ends at x = 1320). Stack labels fit on one line.
 - **Highlights:** no stray `*` or `[`. There is at most one orange per screen.
 - **Face framing:** the face is centred in the PiP, and the punch-ins don't cut off the head.
+- **Logos:** each is the right company and reads at size (`pipeline/logos.py sheet`), and chips with logos don't cover the face.
 - **Reveal timing:** reveals land on the spoken word. If a beat shows faint words for a long time, its `at` is too early.
 - **Loudness:** `ffmpeg -i out.mp4 -af ebur128 -f null - 2>&1 | grep " I:"` reads about −14.
 

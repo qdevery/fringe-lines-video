@@ -1,0 +1,63 @@
+{
+ "apollo": {
+  "name": "Apollo",
+  "domain": "apollo.io",
+  "file": "apollo.png",
+  "bleed": false,
+  "aliases": [
+   "apollo.io"
+  ],
+  "source": "https://www.apollo.io/apple-icon.png?apple-icon.0-gy.9xjm.kcw.png",
+  "px": 180
+ },
+ "claude": {
+  "name": "Claude",
+  "domain": "claude.ai",
+  "file": "claude.png",
+  "bleed": true,
+  "aliases": [
+   "claude code"
+  ],
+  "source": "https://www.google.com/s2/favicons?domain=claude.ai&sz=256",
+  "px": 248
+ },
+ "clay": {
+  "name": "Clay",
+  "domain": "clay.com",
+  "file": "clay.png",
+  "bleed": false,
+  "aliases": [],
+  "source": "https://cdn.prod.website-files.com/61477f2c24a826836f969afe/6a3a92ab3c92c9caa6245619_dot-com_favicon_2026_512.png",
+  "px": 180
+ },
+ "github": {
+  "name": "GitHub",
+  "domain": "github.com",
+  "file": "github.png",
+  "bleed": true,
+  "aliases": [],
+  "source": "https://github.com/apple-touch-icon.png",
+  "px": 120
+ },
+ "heyreach": {
+  "name": "HeyReach",
+  "domain": "heyreach.io",
+  "file": "heyreach.png",
+  "bleed": true,
+  "aliases": [
+   "hayreach",
+   "hey reach"
+  ],
+  "source": "https://cdn.prod.website-files.com/6a295ff72cf042cd2bb5d03a/6a2961144262510c804e6566_HQ-Favicon-1000x1000.png",
+  "px": 180
+ },
+ "instantly": {
+  "name": "Instantly",
+  "domain": "instantly.ai",
+  "file": "instantly.png",
+  "bleed": false,
+  "aliases": [],
+  "source": "https://cdn.prod.website-files.com/63860c8c65e7bef4a1eeebeb/63f62e4d1df86f1bf7f133d5_cleaned_rounded.png",
+  "px": 256
+ }
+}

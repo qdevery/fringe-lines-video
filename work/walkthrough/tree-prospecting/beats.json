@@ -1,0 +1,187 @@
+{
+  "brand": "FringeLines",
+  "beats": [
+    {"type": "title", "at": 0.2, "end": 3.0, "eyebrow": "FringeLines · How-to", "text": "Prospecting with *public data*", "reveal": "even"},
+    {"type": "name", "at": 3.1, "end": 6.4, "text": "Quinn", "role": "Host · Fringe Lines"},
+    {"type": "logos", "at": 4.6, "end": 9.4, "side": "right", "label": "Everyone sells enrichment", "items": [
+      {"text": "Instantly", "logo": "instantly", "at": 4.7},
+      {"text": "Apollo", "logo": "apollo", "at": 5.3},
+      {"text": "Clay", "logo": "clay", "at": 6.1},
+      {"text": "Lemlist", "at": 6.8},
+      {"text": "HeyReach", "logo": "heyreach", "at": 7.7}]},
+    {"type": "pills", "at": 9.6, "end": 20.4, "items": [
+      {"text": "Hundreds of dollars *a month*", "icon": "x", "at": 10.6},
+      {"text": "Public data is *underserved*", "icon": "check", "at": 14.7}]},
+    {"type": "card", "at": 29.9, "end": 39.6, "side": "right", "label": "The approach", "logo": "claude", "typing": true,
+     "text": "Scrape the public internet with Claude Code for buyers based on tree canopy"},
+
+    {"type": "chapter", "at": 41.5, "end": 44.3, "eyebrow": "The project", "text": "County tax roll to a *ranked call list*"},
+
+    {"type": "pills", "at": 44.5, "end": 61.2, "items": [
+      {"text": "Large commercial grounds", "icon": "check", "at": 48.7},
+      {"text": "B2B, *not residential*", "icon": "check", "at": 52.1},
+      {"text": "A lot of trees", "icon": "check", "at": 54.6},
+      {"text": "Scored on *canopy*", "icon": "check", "at": 57.8}]},
+
+    {"type": "screen", "at": 61.3, "end": 70.4, "apps": ["DECK"], "eyebrow": "Tree prospecting · the goal",
+     "focus": [
+       {"at": 61.3, "box": [0.05, 0.17, 0.9, 0.65]},
+       {"at": 62.2, "box": [0.04, 0.19, 0.66, 0.58]},
+       {"at": 65.6, "box": [0.05, 0.17, 0.9, 0.65]}],
+     "marks": [
+       {"at": 62.2, "end": 65.4, "box": [0.067, 0.347, 0.207, 0.213], "label": "Run by management firms"},
+       {"at": 65.8, "end": 66.3, "box": [0.507, 0.347, 0.207, 0.213]},
+       {"at": 66.3, "end": 67.1, "box": [0.727, 0.347, 0.207, 0.213]},
+       {"at": 67.1, "end": 67.7, "box": [0.067, 0.58, 0.207, 0.213]},
+       {"at": 67.7, "end": 70.3, "box": [0.287, 0.58, 0.207, 0.213]}],
+     "blur": [{"box": [0.0, 0.0, 1.0, 0.07]}]},
+
+    {"type": "pills", "at": 70.5, "end": 77.2, "items": [
+      {"text": "Healthy, *strong* trees", "icon": "check", "at": 71.7},
+      {"text": "Over-pruning costs money", "icon": "x", "at": 74.8}]},
+
+    {"type": "screen", "at": 77.3, "end": 98.8, "apps": ["DECK"], "eyebrow": "Tree prospecting · the whole flow",
+     "focus": [
+       {"at": 77.3, "box": [0.05, 0.17, 0.9, 0.58]},
+       {"at": 92.6, "box": [0.05, 0.6, 0.9, 0.16]},
+       {"at": 97.4, "box": [0.05, 0.17, 0.9, 0.58]}],
+     "marks": [
+       {"at": 80.6, "end": 85.3, "box": [0.062, 0.34, 0.15, 0.26]},
+       {"at": 85.4, "end": 86.0, "box": [0.207, 0.34, 0.15, 0.26]},
+       {"at": 86.1, "end": 88.2, "box": [0.352, 0.34, 0.15, 0.26]},
+       {"at": 88.3, "end": 89.7, "box": [0.497, 0.34, 0.15, 0.26]},
+       {"at": 89.8, "end": 90.9, "box": [0.642, 0.34, 0.15, 0.26]},
+       {"at": 91.0, "end": 92.5, "box": [0.787, 0.34, 0.15, 0.26]},
+       {"at": 93.2, "end": 98.6, "box": [0.528, 0.648, 0.406, 0.066], "label": "From free data"}],
+     "blur": [{"box": [0.0, 0.0, 1.0, 0.07]}]},
+
+    {"type": "chapter", "at": 98.9, "end": 100.4, "eyebrow": "The tools", "text": "The *stack*"},
+
+    {"type": "screen", "at": 100.5, "end": 124.6, "apps": ["DECK"], "eyebrow": "Tree prospecting · the stack",
+     "focus": [
+       {"at": 100.5, "box": [0.05, 0.17, 0.9, 0.72]},
+       {"at": 101.6, "box": [0.04, 0.19, 0.62, 0.7]},
+       {"at": 118.8, "box": [0.05, 0.17, 0.9, 0.72]}],
+     "marks": [
+       {"at": 102.6, "end": 111.6, "box": [0.067, 0.347, 0.23, 0.105], "label": "HCAD, canopy, storms, 311"},
+       {"at": 111.9, "end": 116.3, "box": [0.067, 0.547, 0.23, 0.105], "label": "Runs on a Mac mini"},
+       {"at": 116.5, "end": 118.7, "box": [0.067, 0.747, 0.23, 0.105]},
+       {"at": 118.9, "end": 121.4, "box": [0.386, 0.518, 0.23, 0.163], "label": "The brain"},
+       {"at": 122.0, "end": 122.4, "box": [0.705, 0.347, 0.23, 0.105]},
+       {"at": 122.5, "end": 122.8, "box": [0.705, 0.547, 0.23, 0.105]},
+       {"at": 122.9, "end": 124.5, "box": [0.705, 0.747, 0.23, 0.105]}],
+     "blur": [{"box": [0.0, 0.0, 1.0, 0.07]}]},
+
+    {"type": "pills", "at": 124.7, "end": 142.1, "items": [
+      {"text": "Apollo searches are *free*", "icon": "check", "logo": "apollo", "at": 130.7},
+      {"text": "Plugged in through MCP", "icon": "check", "at": 132.4},
+      {"text": "Asks before *any credits*", "icon": "check", "at": 137.3}]},
+
+    {"type": "screen", "at": 142.2, "end": 170.1, "apps": ["DECK"], "eyebrow": "Tree prospecting · data sources",
+     "focus": [
+       {"at": 142.2, "box": [0.05, 0.17, 0.9, 0.56]},
+       {"at": 159.8, "box": [0.05, 0.17, 0.9, 0.7]},
+       {"at": 164.2, "box": [0.05, 0.26, 0.6, 0.33]},
+       {"at": 167.6, "box": [0.05, 0.17, 0.9, 0.7]}],
+     "marks": [
+       {"at": 144.7, "end": 147.0, "box": [0.067, 0.333, 0.28, 0.138]},
+       {"at": 147.1, "end": 148.1, "box": [0.36, 0.333, 0.28, 0.138]},
+       {"at": 148.2, "end": 150.3, "box": [0.654, 0.333, 0.28, 0.138]},
+       {"at": 150.4, "end": 151.3, "box": [0.067, 0.493, 0.28, 0.11]},
+       {"at": 151.4, "end": 153.5, "box": [0.36, 0.493, 0.28, 0.11]},
+       {"at": 153.6, "end": 155.6, "box": [0.654, 0.493, 0.28, 0.11]},
+       {"at": 157.3, "end": 159.6, "box": [0.067, 0.632, 0.867, 0.062]},
+       {"at": 164.7, "end": 167.5, "box": [0.067, 0.28, 0.275, 0.28], "label": "Claude pulled these"}],
+     "blur": [{"box": [0.0, 0.0, 1.0, 0.07]}]},
+
+    {"type": "card", "at": 172.9, "end": 186.0, "side": "right", "label": "Coming soon", "logo": "github", "typing": true,
+     "text": "Public GitHub repo, linked in the show notes"},
+    {"type": "pills", "at": 177.0, "end": 186.0, "items": [
+      {"text": "Build *your own* list", "icon": "check", "at": 178.1}]},
+
+    {"type": "chapter", "at": 186.1, "end": 187.7, "eyebrow": "How it runs", "text": "Six *steps*"},
+
+    {"type": "screen", "at": 187.8, "end": 237.3, "apps": ["DECK"], "eyebrow": "Tree prospecting · steps 1–3",
+     "focus": [
+       {"at": 187.8, "box": [0.05, 0.17, 0.9, 0.7]},
+       {"at": 192.0, "box": [0.05, 0.17, 0.9, 0.63]},
+       {"at": 209.2, "box": [0.05, 0.17, 0.9, 0.6]},
+       {"at": 234.1, "box": [0.05, 0.17, 0.9, 0.6]}],
+     "marks": [
+       {"at": 189.1, "end": 191.4, "box": [0.067, 0.365, 0.867, 0.09], "label": "First match wins"},
+       {"at": 196.4, "end": 199.9, "box": [0.094, 0.365, 0.813, 0.07]},
+       {"at": 200.0, "end": 201.5, "box": [0.177, 0.447, 0.646, 0.07]},
+       {"at": 201.6, "end": 205.1, "box": [0.26, 0.527, 0.48, 0.07], "label": "Big enough to pay"},
+       {"at": 205.2, "end": 208.4, "box": [0.344, 0.608, 0.313, 0.077]},
+       {"at": 215.4, "end": 226.4, "box": [0.538, 0.365, 0.397, 0.117], "label": "21 LLCs, one firm"},
+       {"at": 227.4, "end": 234.0, "box": [0.538, 0.5, 0.397, 0.115], "label": "Matched to the manager"},
+       {"at": 234.1, "end": 237.2, "box": [0.067, 0.4, 0.323, 0.05], "label": "Senior living"}],
+     "blur": [{"box": [0.0, 0.0, 1.0, 0.07]}]},
+
+    {"type": "big", "at": 246.3, "end": 248.7, "text": "[1] *hour*", "sub": "vs. weeks by hand"},
+
+    {"type": "screen", "at": 248.8, "end": 264.9, "apps": ["DECK"], "eyebrow": "Tree prospecting · step 4",
+     "focus": [
+       {"at": 248.8, "box": [0.05, 0.17, 0.9, 0.58]},
+       {"at": 252.1, "box": [0.05, 0.17, 0.9, 0.58]}],
+     "marks": [
+       {"at": 253.4, "end": 259.5, "box": [0.405, 0.398, 0.53, 0.04]},
+       {"at": 263.1, "end": 264.8, "box": [0.411, 0.712, 0.25, 0.024], "kind": "underline"}],
+     "blur": [{"box": [0.0, 0.0, 1.0, 0.07]}]},
+
+    {"type": "pills", "at": 265.0, "end": 275.3, "items": [
+      {"text": "Only *shared-space* trees", "icon": "check", "at": 265.4},
+      {"text": "Scrape each HOA's site", "icon": "check", "at": 274.2}]},
+
+    {"type": "screen", "at": 275.4, "end": 313.9, "apps": ["DECK"], "eyebrow": "Tree prospecting · steps 4–5",
+     "focus": [
+       {"at": 275.4, "box": [0.05, 0.17, 0.9, 0.58]},
+       {"at": 285.2, "box": [0.05, 0.17, 0.9, 0.6]},
+       {"at": 290.6, "box": [0.04, 0.33, 0.92, 0.24]},
+       {"at": 305.2, "box": [0.05, 0.17, 0.9, 0.66]}],
+     "marks": [
+       {"at": 278.0, "end": 281.5, "box": [0.405, 0.395, 0.53, 0.12], "label": "Top canopy share"},
+       {"at": 284.1, "end": 285.1, "box": [0.405, 0.625, 0.53, 0.07]},
+       {"at": 291.2, "end": 292.1, "box": [0.065, 0.37, 0.108, 0.165]},
+       {"at": 292.2, "end": 293.0, "box": [0.216, 0.37, 0.108, 0.165]},
+       {"at": 293.1, "end": 293.9, "box": [0.366, 0.37, 0.108, 0.165]},
+       {"at": 294.0, "end": 294.8, "box": [0.516, 0.37, 0.108, 0.165]},
+       {"at": 294.9, "end": 295.8, "box": [0.667, 0.37, 0.108, 0.165]},
+       {"at": 295.9, "end": 296.5, "box": [0.82, 0.365, 0.115, 0.18]},
+       {"at": 298.2, "end": 301.0, "box": [0.067, 0.773, 0.283, 0.098], "label": "Call first"},
+       {"at": 301.4, "end": 304.8, "box": [0.358, 0.773, 0.283, 0.098]},
+       {"at": 308.8, "end": 311.0, "box": [0.064, 0.342, 0.45, 0.04]},
+       {"at": 311.1, "end": 312.2, "box": [0.064, 0.384, 0.45, 0.04]},
+       {"at": 312.3, "end": 313.8, "box": [0.064, 0.426, 0.45, 0.04]}],
+     "blur": [{"box": [0.0, 0.0, 1.0, 0.07]}]},
+
+    {"type": "screen", "at": 314.0, "end": 328.6, "apps": ["DECK"], "eyebrow": "Tree prospecting · step 6",
+     "focus": [
+       {"at": 314.0, "box": [0.05, 0.17, 0.9, 0.55]},
+       {"at": 318.4, "box": [0.05, 0.34, 0.45, 0.22]},
+       {"at": 324.6, "box": [0.05, 0.17, 0.9, 0.55]}],
+     "marks": [
+       {"at": 318.6, "end": 320.3, "box": [0.067, 0.363, 0.148, 0.185], "label": "Free search"},
+       {"at": 320.4, "end": 324.5, "box": [0.247, 0.363, 0.148, 0.185], "label": "Business emails"}],
+     "blur": [{"box": [0.0, 0.0, 1.0, 0.07]}]},
+
+    {"type": "pills", "at": 328.7, "end": 342.5, "items": [
+      {"text": "HOA boards are *residents*", "icon": "x", "at": 330.1},
+      {"text": "No LinkedIn presence", "icon": "x", "at": 337.7}]},
+
+    {"type": "screen", "at": 342.6, "end": 352.5, "apps": ["DECK"], "eyebrow": "Tree prospecting · the credit gate",
+     "focus": [
+       {"at": 342.6, "box": [0.05, 0.17, 0.9, 0.68]}],
+     "marks": [
+       {"at": 343.9, "end": 346.0, "box": [0.375, 0.347, 0.25, 0.105]},
+       {"at": 346.1, "end": 352.4, "box": [0.375, 0.732, 0.25, 0.105], "label": "Nothing spent without a yes"}],
+     "blur": [{"box": [0.0, 0.0, 1.0, 0.07]}]},
+
+    {"type": "pills", "at": 352.6, "end": 369.3, "items": [
+      {"text": "Harris County, *Houston*", "icon": "dot", "at": 353.4},
+      {"text": "Dallas, Tarrant, *your county*", "icon": "check", "at": 355.7},
+      {"text": "Anywhere with public data", "icon": "check", "at": 361.1}]},
+
+    {"type": "end", "at": 369.4, "end": 374.1, "eyebrow": "FringeLines · How-to", "text": "Build your own *call list*", "sub": "GitHub repo + how-to guide in the show notes"}
+  ]
+}

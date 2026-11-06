@@ -1,0 +1,44 @@
+{
+  "brand": "FringeLines",
+  "beats": [
+    {"type": "title", "at": 0.2, "end": 2.7, "eyebrow": "FringeLines · How-to", "text": "How I built an AI *morning brief*"},
+    {"type": "name", "at": 2.8, "end": 6.0, "text": "Quinn", "role": "Host · Fringe Lines"},
+    {"type": "pills", "at": 3.2, "end": 12.2, "items": [
+      {"text": "Missed meeting recordings", "icon": "x", "at": 3.3},
+      {"text": "Copy-paste by hand", "icon": "x", "at": 4.7},
+      {"text": "A loop that runs *every morning*", "icon": "check", "at": 8.0}]},
+    {"type": "card", "at": 9.6, "end": 12.2, "side": "right", "label": "The loop", "text": "Every morning, scrape all my things"},
+    {"type": "table", "at": 12.3, "end": 19.4, "title": "Why *a loop*", "columns": ["By hand", "The loop"], "highlight": 1, "rows": [
+      {"text": "Catches missed meetings", "values": [false, true], "at": 12.8},
+      {"text": "Runs with the laptop closed", "values": [false, true], "at": 14.3},
+      {"text": "Syncs to-dos to Asana", "values": [false, true], "at": 15.6}]},
+    {"type": "chapter", "at": 19.5, "end": 21.1, "eyebrow": "Four layers", "text": "The *architecture*"},
+    {"type": "screen", "at": 21.2, "end": 78.4, "apps": ["PPT"], "eyebrow": "The Morning Loop · architecture",
+     "focus": [
+       {"at": 21.2, "box": [0.08, 0.12, 0.85, 0.85]},
+       {"at": 24.1, "box": [0.11, 0.34, 0.21, 0.56]},
+       {"at": 42.1, "box": [0.30, 0.34, 0.21, 0.56]},
+       {"at": 54.5, "box": [0.49, 0.34, 0.21, 0.56]},
+       {"at": 66.4, "box": [0.68, 0.34, 0.21, 0.56]},
+       {"at": 76.6, "box": [0.08, 0.12, 0.85, 0.85]}],
+     "marks": [
+       {"at": 24.4, "end": 28.4, "box": [0.135, 0.455, 0.155, 0.065]},
+       {"at": 28.5, "end": 31.0, "box": [0.135, 0.545, 0.13, 0.05]},
+       {"at": 31.1, "end": 36.7, "box": [0.135, 0.625, 0.075, 0.05], "label": "Any comms channel"},
+       {"at": 36.8, "end": 39.2, "box": [0.135, 0.705, 0.075, 0.05]},
+       {"at": 39.3, "end": 42.0, "box": [0.135, 0.785, 0.13, 0.05]},
+       {"at": 48.4, "end": 54.4, "box": [0.33, 0.45, 0.16, 0.31], "label": "Approved connectors"},
+       {"at": 56.3, "end": 61.0, "box": [0.525, 0.46, 0.15, 0.055], "label": "8 AM, laptop closed"},
+       {"at": 61.1, "end": 65.5, "box": [0.525, 0.545, 0.12, 0.05]},
+       {"at": 65.6, "end": 66.3, "box": [0.525, 0.625, 0.165, 0.05]},
+       {"at": 68.6, "end": 72.8, "box": [0.71, 0.46, 0.12, 0.05], "label": "Flags what I missed"},
+       {"at": 74.6, "end": 76.9, "box": [0.71, 0.545, 0.12, 0.05], "kind": "underline"},
+       {"at": 77.0, "end": 78.4, "box": [0.71, 0.625, 0.10, 0.05], "kind": "underline"}],
+     "blur": [{"box": [0.42, 0.0, 0.16, 0.035]}]},
+    {"type": "flow", "at": 78.5, "end": 82.7, "title": "The daily *loop*", "items": [
+      {"text": "Feed brief", "sub": "every morning", "at": 78.7},
+      {"text": "My reply", "sub": "end of day", "at": 80.5},
+      {"text": "Updated to-dos", "sub": "next morning", "icon": "check", "at": 81.6}]},
+    {"type": "end", "at": 82.8, "end": 86.4, "eyebrow": "FringeLines · How-to", "text": "Build your own *morning brief*", "sub": "The full episode is at fringelines.co"}
+  ]
+}

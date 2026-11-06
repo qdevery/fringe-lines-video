@@ -71,3 +71,13 @@ Cameras: `Quinn.mp4` = Quinn (glasses, headphones). `Doom-1.mp4` = Doom.
   - Output: a single 1080×1350 PNG in `out/infographics/`.
   - Recipe: `.claude/skills/infographic/SKILL.md`.
   - Example: `infographics/2026-10-30-morning-loop/` ("Your AI chief of staff.").
+
+## 2026-11-06
+- **How-to walkthroughs:** made `out/walkthrough/tree-prospecting.mp4` (6:14) from the Descript export in `inbox/walkthrough/Tree Prospecting/`. Beats are in `work/walkthrough/tree-prospecting/beats.json`.
+- **Prep output moved out of the inbox:** `build_walkthrough.py prep` now writes `take.mp4`, `screen.mp4` and `screen.json` to `work/walkthrough/<slug>/src/`. The inbox only holds what was dropped in.
+- **Company logos:** `pipeline/logos.py` keeps a shared library in `assets/logos/` (`logos.json` registry; `fetch`, `list`, `scan`, `sheet`).
+  - Walkthrough: `logo` on pills, card, flow and list items, plus a new `logos` beat (a row of logo tiles in spoken order).
+  - Monologue: `logo` on chips and callout.
+  - Logos never go over the screen recording.
+  - In the library now: apollo, clay, instantly, heyreach, claude, github.
+  - Missing: Lemlist (its site only has a 32 px favicon) and LinkedIn (connection refused from the Mac mini). Get those with `--file`.
